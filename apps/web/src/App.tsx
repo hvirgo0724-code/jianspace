@@ -41,6 +41,9 @@ import Workspace from './Workspace';
 import { type ProjectSort } from './projectWorkflow';
 import PlansPage, { GuidePage, usePlans } from './components/Plans';
 import AccountPage from './components/Account';
+import RenovationReview from './components/RenovationReview';
+import MaterialEstimate from './components/MaterialEstimate';
+import QuickRender from './components/QuickRender';
 import ErrorBoundary from './components/ErrorBoundary';
 import Assistant from './components/Assistant';
 
@@ -93,6 +96,18 @@ export default function App() {
           <Route path="/share/:token" element={<PublicShare />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/guide" element={<GuidePage />} />
+          <Route
+            path="/projects/:projectId/review"
+            element={me.isLoading ? <Spinner /> : me.data ? <RenovationReview /> : <Navigate to="/" replace />}
+          />
+          <Route
+            path="/projects/:projectId/materials"
+            element={me.isLoading ? <Spinner /> : me.data ? <MaterialEstimate /> : <Navigate to="/" replace />}
+          />
+          <Route
+            path="/projects/:projectId/quick-render"
+            element={me.isLoading ? <Spinner /> : me.data ? <QuickRender /> : <Navigate to="/" replace />}
+          />
           <Route
             path="/account"
             element={

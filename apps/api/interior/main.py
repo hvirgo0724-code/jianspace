@@ -1,6 +1,6 @@
 import hmac, uuid
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request, Body
+from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import select
@@ -14,6 +14,7 @@ from .catalog import CATALOG, STYLES
 from .templates import list_templates
 from .routes import auth, projects, assets, jobs, collaboration, account
 from .routes import assistant as assistant_routes
+from .routes import review as review_routes
 
 
 @asynccontextmanager
@@ -140,6 +141,7 @@ for r in (
     collaboration.router,
     account.router,
     assistant_routes.router,
+    review_routes.router,
 ):
     app.include_router(r, prefix="/api")
 
@@ -195,61 +197,6 @@ def catalog():
         "items": CATALOG,
         "styles": STYLES,
         "note": "尺寸化通用家具模型；价格需另行询价。",
-    }
-
-
-@app.post("/api/review/analyze")
-def review_analyze(payload: dict = Body(...)):
-    """装修避坑审查：上传文本（合同/报价单内容）进行关键词匹配分析。"""
-    text = payload.get("content", "")
-    from .review import match_findings, summarize_findings
-    findings = match_findings(text)
-    report = summarize_findings(findings)
-    return {
-        "summary": report.summary,
-        "totalFindings": report.total_findings,
-        "bySeverity": report.by_severity,
-        "byCategory": report.by_category,
-        "findings": [
-            {
-                "id": f.id,
-                "category": f.category,
-                "severity": f.severity,
-                "title": f.title,
-                "description": f.description,
-                "advice": f.advice,
-                "estimatedAmountMinor": f.estimated_amount_minor,
-            }
-            for f in report.findings
-        ],
-        "contractReliabilityScore": report.contract_reliability_score,
-        "predictedExtraCostMinor": report.predicted_extra_cost_minor,
-    }
-
-
-@app.get("/api/review/budget-tiers")
-def review_budget_tiers():
-    """返回装修材料三档预算表。"""
-    from .review import BUDGET_TIERS
-    return {"tiers": BUDGET_TIERS}
-
-
-@app.post("/api/materials/estimate")
-def materials_estimate(payload: dict = Body(...)):
-    """根据场景 + 风格生成材料清单 + 三档预算。"""
-    scene = payload.get("scene", {})
-    style_id = payload.get("styleId")
-    from .review import estimate_materials
-    return estimate_materials(scene, style_id)
-
-
-@app.get("/api/recognition/backend")
-def recognition_backend():
-    """返回当前户型识别后端配置。"""
-    return {
-        "current": settings.local_recognition_backend,
-        "available": ["dashscope", "yolov8"],
-        "note": "将 LOCAL_RECOGNITION_BACKEND=yolov8 并安装 ultralytics+PyTorch CUDA 启用本地 GPU 推理。",
     }
 
 

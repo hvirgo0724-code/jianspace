@@ -54,6 +54,11 @@ class Settings(BaseSettings):
     public_url: str = "http://127.0.0.1:5180"
     local_recognition_backend: str = "dashscope"
     local_inference_device: str = "cuda"
+    yolov8_weights: str = "yolov8n-floorplan.pt"
+    controlnet_model: str = "diffusers/controlnet-canny-sdxl-1.0"
+    controlnet_base_model: str = "stabilityai/stable-diffusion-xl-base-1.0"
+    controlnet_steps: int = Field(default=28, ge=8, le=60)
+    controlnet_seed: int = 20260101
 
     @property
     def production(self):

@@ -1,0 +1,333 @@
+/* 审查 / 材料 / 快速出图三个页面的共用样式 */
+.insight-page {
+  min-height: 100vh;
+  padding: 24px clamp(16px, 4vw, 56px) 64px;
+  background: #f7f8f3;
+  color: #353c30;
+}
+.insight-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.insight-head .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #6b7e4e;
+  text-decoration: none;
+}
+.insight-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: #394c31;
+}
+.insight-sub {
+  margin: 0 0 22px;
+  font-size: 13px;
+  color: #919789;
+  max-width: 720px;
+  line-height: 1.7;
+}
+.insight-card {
+  background: #fff;
+  border: 1px solid #e6e8df;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.insight-card h2 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #394c31;
+}
+.insight-card p.hint {
+  margin: 0 0 14px;
+  font-size: 12px;
+  color: #919789;
+}
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.insight-upload {
+  border: 1px dashed #d7dbcc;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fbfcf7;
+}
+.insight-upload label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7e4e;
+  margin-bottom: 8px;
+}
+.insight-upload input[type='file'],
+.insight-upload input[type='number'],
+.insight-upload select,
+.insight-upload textarea {
+  width: 100%;
+  font-size: 12px;
+  padding: 7px 9px;
+  border: 1px solid #e6e8df;
+  border-radius: 7px;
+  background: #fff;
+  color: #353c30;
+}
+.insight-upload textarea {
+  min-height: 76px;
+  resize: vertical;
+}
+.insight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.insight-primary {
+  background: #394c31;
+  color: #f7f8f3;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.insight-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.insight-ghost {
+  border: 1px solid #e6e8df;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: #394c31;
+  background: #fff;
+}
+.insight-note {
+  font-size: 12px;
+  color: #919789;
+}
+.insight-error {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fdf0ee;
+  border: 1px solid #f3d5d0;
+  color: #a84a3c;
+  font-size: 12px;
+}
+.score-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+.score-badge {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 600;
+  border: 2px solid #e6e8df;
+  color: #394c31;
+  flex: none;
+}
+.score-badge.good {
+  border-color: #a8c08a;
+  background: #f2f7ea;
+}
+.score-badge.warn {
+  border-color: #e3c98a;
+  background: #fdf8ec;
+}
+.score-badge.bad {
+  border-color: #e5b0a5;
+  background: #fdf0ee;
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  flex: 1;
+}
+.stat {
+  background: #fbfcf7;
+  border: 1px solid #eef0e6;
+  border-radius: 9px;
+  padding: 10px 12px;
+}
+.stat b {
+  display: block;
+  font-size: 18px;
+  color: #394c31;
+}
+.stat span {
+  font-size: 11px;
+  color: #919789;
+}
+.finding {
+  border: 1px solid #eef0e6;
+  border-left-width: 3px;
+  border-radius: 9px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+.finding.high {
+  border-left-color: #c2614e;
+}
+.finding.medium {
+  border-left-color: #d3a34a;
+}
+.finding.low {
+  border-left-color: #8fa377;
+}
+.finding-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.finding-head strong {
+  font-size: 13px;
+  color: #394c31;
+}
+.chip {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #f1f3e9;
+  color: #6b7e4e;
+  white-space: nowrap;
+}
+.chip.high {
+  background: #fbe7e2;
+  color: #a84a3c;
+}
+.chip.medium {
+  background: #fbf1dc;
+  color: #98702a;
+}
+.chip.low {
+  background: #eff3e8;
+  color: #6b7e4e;
+}
+.finding p {
+  margin: 4px 0;
+  font-size: 12px;
+  line-height: 1.75;
+  color: #4c5444;
+}
+.finding .evidence {
+  color: #919789;
+  font-style: italic;
+}
+.finding .budget-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #6b7e4e;
+  background: #f4f7ec;
+  border: 1px solid #e3e9d4;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+.tier-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.tier-table th,
+.tier-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid #eef0e6;
+  text-align: left;
+}
+.tier-table th {
+  color: #6b7e4e;
+  font-weight: 600;
+  background: #fbfcf7;
+}
+.tier-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.tier-table tr.recommended td {
+  background: #f4f7ec;
+  font-weight: 600;
+}
+.material-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f3e9;
+  font-size: 12px;
+}
+.material-item b {
+  color: #394c31;
+}
+.material-item span {
+  color: #919789;
+}
+.steps {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.step {
+  flex: 1;
+  min-width: 140px;
+  border: 1px solid #e6e8df;
+  border-radius: 9px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #919789;
+  background: #fff;
+}
+.step.active {
+  border-color: #a8c08a;
+  background: #f4f7ec;
+  color: #394c31;
+  font-weight: 600;
+}
+.step.done {
+  border-color: #e3e9d4;
+  background: #fbfcf7;
+  color: #6b7e4e;
+}
+.quick-preview {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e6e8df;
+  background: #fbfcf7;
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  padding: 10px;
+}
+.quick-preview img {
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+.job-state {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #4c5444;
+  line-height: 1.8;
+}

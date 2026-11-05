@@ -8,7 +8,7 @@ export class ApiError extends Error {
     super(message);
   }
 }
-function csrf() {
+export function csrfToken() {
   return decodeURIComponent(
     document.cookie
       .split('; ')
@@ -20,7 +20,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const headers = new Headers(init.headers);
   if (init.body && !(init.body instanceof FormData))
     headers.set('Content-Type', 'application/json');
-  if (init.method && !['GET', 'HEAD'].includes(init.method)) headers.set('X-CSRF-Token', csrf());
+  if (init.method && !['GET', 'HEAD'].includes(init.method)) headers.set('X-CSRF-Token', csrfToken());
   const res = await fetch('/api' + path, { ...init, headers, credentials: 'include' });
   if (res.status === 204) return undefined as T;
   const body = await res.json().catch(() => ({}));

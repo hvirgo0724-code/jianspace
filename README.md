@@ -53,34 +53,36 @@
 
 > 面向装修消费者的 AI 批判审查引擎，帮助在签合同前发现隐形陷阱
 
-- 上传设计图纸 + 合同报价单 → AI 批判性分析
-- **卫生死角检测**：吊顶内积水区、厨房操作死角、淋浴房边缘发霉区
-- **过度装修审查**：吊顶层数超标、墙面造型面积占比过高、石材铺贴不必要
-- **合同隐形陷阱**：增项条款模糊、材料品牌未标注、工期违约金缺失
-- **跨文档交叉核查**：设计图、报价单、合同三文档信息对比
-- **增项预测**：根据行业数据预测装修过程中可能出现的增项
-- 输出在线审查报告 + 可下载 PDF
-- 关联预算清单中的可疑项，直接在预算页标注
+- 入口：项目工作台侧边栏「装修避坑审查」（`/projects/:id/review`）
+- 上传合同 / 报价单 / 设计说明（PDF / TXT / MD / CSV），或直接粘贴文字
+- **本地知识库**：18 条规则覆盖卫生死角、过度装修、合同陷阱、增项预测四类
+- **大模型批判分析**：由百炼文本模型补充语义级陷阱，返回结构化条目与原文依据
+- **跨文档交叉核查**：合同与报价单金额差异 ≥15%、设计说明有而报价单缺项、合同缺总价
+- **增项预测**：按坑位条目给出预估影响金额，汇总为预计增项总额
+- 在线报告 + 可下载 PDF（含评分、分项统计与逐条建议）
+- 审查结果可关联预算清单条目（`budgetItemIds`）
+
+> 未配置或密钥失效时自动降级为纯本地规则，并在报告中标注原因。
 
 ### 🪨 材料清单自动匹配
 
 > AI 风格效果图反推装修材料建议
 
-- 从 AI 效果图自动提取墙面、地面、柜体、灯具的视觉特征
-- 匹配对应的材料品类与主流品牌型号
-- 提供 **三档预算建议**（经济 / 标准 / 高配）
-- 可关联购买链接，一键跳转建材电商
-- 支持输出完整的施工材料清单 PDF
+- 入口：项目工作台侧边栏「材料清单」（`/projects/:id/materials`）
+- 按套内面积（可自动从房间轮廓求和）与风格生成地面 / 墙面 / 柜体 / 卫浴 / 灯具清单
+- 输出 **三档预算**（经济 / 标准 / 高档），含各档单价、管理费比例与合计
+- 上传 AI 效果图，视觉模型反推可见表面材料（材质、颜色、工艺、置信度）
+- 每项材料给出三档替代方案建议，可导出 CSV
 
 ### 🏘️ 本地 AI 户型识别
 
 > 支持 GPU 加速的本地推理，无需依赖外部 API
 
-- **YOLOv8** 自动识别户型结构（墙 / 门 / 窗 / 房间分区）
-- **ControlNet** 轮廓/深度约束生成，保证效果图与原始户型结构一致
-- **Stable Diffusion XL** 本地 GPU 推理
-- 三种预设风格：现代简约、北欧风格、现代中式
-- 适合部署在有 GPU 的私有服务器场景，保护户型隐私
+- **YOLOv8** 检测墙 / 门 / 窗 / 房间，检测框按图像比例映射为毫米坐标，
+  洞口自动吸附到最近墙体并计算偏移
+- **ControlNet** 轮廓 / 深度约束生成，保持户型结构不变只换风格
+- 三种后端可在 `/api/recognition/backend` 查看，按 `LOCAL_RECOGNITION_BACKEND` 切换
+- 未安装可选依赖时返回明确安装指引，不影响云端识别与其余功能
 
 ### 💬 小筑 · 家装管家
 
@@ -137,16 +139,29 @@ WEATHER_DEFAULT_CITY=上海           # 可选：小筑天气查询
 
 ### 启用本地 GPU 识别
 
-在有 CUDA GPU 的服务器上：
+两个可选能力相互独立，未安装时接口会返回安装指引而不是崩溃。
 
 ```powershell
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-pip install ultralytics diffusers transformers accelerate
+# 本地 YOLOv8 户型识别
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+pip install ultralytics
 
-# .env.docker 启用本地识别
-echo "LOCAL_RECOGNITION_BACKEND=yolov8" >> .env.docker
-echo "LOCAL_INFERENCE_DEVICE=cuda" >> .env.docker
+# ControlNet 结构约束生成
+pip install diffusers transformers accelerate
+
+# .env 启用本地识别
+LOCAL_RECOGNITION_BACKEND=yolov8
+LOCAL_INFERENCE_DEVICE=cuda
+YOLOV8_WEIGHTS=yolov8n-floorplan.pt
+CONTROLNET_MODEL=diffusers/controlnet-canny-sdxl-1.0
+CONTROLNET_BASE_MODEL=stabilityai/stable-diffusion-xl-base-1.0
 ```
+
+> YOLOv8 需要自备户型专用权重（类别名须包含 wall / door / window / room）。
+> 检测框按图像比例换算为毫米坐标，洞口自动吸附到最近墙体。
+
+> 避坑审查与材料反推依赖 `DASHSCOPE_API_KEY` 与 `DASHSCOPE_TEXT_MODEL` /
+> `DASHSCOPE_VISION_MODEL`；密钥无效时会自动降级为本地规则并提示原因。
 
 ---
 
@@ -164,9 +179,9 @@ echo "LOCAL_INFERENCE_DEVICE=cuda" >> .env.docker
 | 几何引擎 | Shapely / JSON Schema | 轮廓、净边界、墙面对齐、碰撞与门扇校验 |
 | 异步任务 | 开发数据库调度器；部署 Celery / Redis | 持久队列、取消、幂等、中断恢复 |
 | 生图 | 阿里云百炼 Qwen 图像编辑适配器 | 付费真实调用，多模型备用切换 |
-| 本地识别 | YOLOv8 + SD XL + ControlNet（可选） | 户型识别与风格化生成 |
-| 避坑审查 | 多模态 LLM + 本地知识库 + 联网搜索 | 合同陷阱、卫生死角、过度装修检测 |
-| 材料匹配 | AI 风格分析 + 建材数据库 | 风格效果图反推材料建议、预算档位 |
+| 本地识别 | YOLOv8 检测框→mm 映射 + SDXL ControlNet（可选） | 户型识别与结构约束生成 |
+| 避坑审查 | 本地知识库 + 百炼文本模型 + 跨文档金额核查 | 合同陷阱、卫生死角、增项预测 |
+| 材料匹配 | 百炼视觉模型 + 三档单价模型 | 效果图反推材料、用量与预算档位 |
 | 小筑助手 | qwen3.8-27b + 知识库 + Open-Meteo | 装修问答、天气查询、闲聊模式 |
 | 导出 | ReportLab / JSON / UTF-8 BOM CSV | 中文 PDF 方案、可恢复场景、清单 |
 
@@ -185,14 +200,14 @@ jianspace/
 │   │   └── package.json
 │   └── api/
 │       ├── interior/           # 后端 FastAPI 应用
-│       │   ├── routes/         # auth / projects / assets / jobs / collaboration / account / assistant
-│       │   ├── providers/      # AI 提供商（百炼图像编辑等）
-│       │   ├── recognition/    # 户型识别（视觉模型 / YOLOv8 本地）
-│       │   ├── review/         # 装修避坑审查 + 材料匹配
+│       │   ├── routes/         # auth / projects / assets / jobs / collaboration / account / assistant / review
+│       │   ├── providers.py    # 百炼图像编辑与文本模型调用
+│       │   ├── recognition.py  # 户型识别（云端视觉 / YOLOv8 毫米坐标映射）
+│       │   ├── controlnet.py   # ControlNet 结构约束生成适配器
+│       │   ├── review.py       # 避坑审查引擎 + 跨文档核查 + 材料清单 + PDF 报告
 │       │   ├── models.py       # SQLAlchemy 数据模型
-│       │   ├── catalog.py      # 家具家电目录 + 风格预设（前后端共享）
+│       │   ├── catalog.py      # 家具家电目录 + 12 种风格预设
 │       │   ├── templates.py    # 11 种户型模板
-│       │   ├── materials.py    # 材料清单生成
 │       │   ├── exports.py      # PDF / JSON / CSV 导出
 │       │   ├── assistant.py    # 小筑家装管家 prompt
 │       │   ├── config.py       # Settings（环境变量）
@@ -227,10 +242,10 @@ jianspace/
 10. **保存方案** → 冻结版本；"预算清单" 区分已知价格与待询价项
 11. **AI 效果图** → 照片页或 3D 视角 → 选风格 → 生成 → 结构复核
 12. **局部改图** → 画笔涂抹可修改区域 → 提交 → 未涂抹区域像素保持
-13. **极简快速出图** → 首页/照片页一键：上传毛坯房 → 选风格 → 30 秒拿到效果图
-14. **材料清单** → AI 风格效果图 → 自动匹配材料 → 三档预算 → 施工清单 PDF
+13. **三步快速出图** → 工作台侧边栏「三步快速出图」：上传照片 → 选风格 → 生成
+14. **材料清单** → 工作台侧边栏「材料清单」：面积与风格 → 三档预算与用量 → 上传效果图反推材料 → 导出 CSV
 15. **小筑助手** → 右下角浮窗问装修问题、预算、天气
-16. **装修避坑** → 上传合同报价单 → AI 批判分析 → 在线报告 + PDF → 关联预算可疑项
+16. **装修避坑** → 工作台侧边栏「装修避坑审查」：上传合同/报价单/设计说明 → 规则+大模型+跨文档核查 → 报告 PDF
 17. **导出 & 分享** → PDF / JSON / CSV，分享链接默认 72h
 
 ---
@@ -248,7 +263,7 @@ npm.cmd run build
 .\.venv\Scripts\ruff.exe check apps/api scripts --select F
 ```
 
-当前后端 **222 项**、前端 **103 项** 测试通过，**75/75 接口操作** 成功响应。
+当前后端 **240 项**、前端 **103 项** 测试通过。
 
 ---
 

@@ -29,6 +29,9 @@ import {
   LayoutDashboard,
   UserRound,
   BookOpen,
+  ShieldAlert,
+  Blocks,
+  Wand2,
 } from 'lucide-react';
 import { api, post, put, ApiError } from './api';
 import type {
@@ -474,6 +477,45 @@ export default function Workspace() {
             {item.id === 'jobs' && pending > 0 && <span>{pending}</span>}
           </button>
         ))}
+        <button
+          className="nav-item"
+          disabled={!!busy}
+          onClick={() =>
+            void run('保存草稿', async () => {
+              await save();
+              nav(`/projects/${pid}/quick-render`);
+            })
+          }
+        >
+          <Wand2 size={18} />
+          三步快速出图
+        </button>
+        <button
+          className="nav-item"
+          disabled={!!busy}
+          onClick={() =>
+            void run('保存草稿', async () => {
+              await save();
+              nav(`/projects/${pid}/review`);
+            })
+          }
+        >
+          <ShieldAlert size={18} />
+          装修避坑审查
+        </button>
+        <button
+          className="nav-item"
+          disabled={!!busy}
+          onClick={() =>
+            void run('保存草稿', async () => {
+              await save();
+              nav(`/projects/${pid}/materials`);
+            })
+          }
+        >
+          <Blocks size={18} />
+          材料清单
+        </button>
         <button
           className="nav-item"
           disabled={!!busy}
