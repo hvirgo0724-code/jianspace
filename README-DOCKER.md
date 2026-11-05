@@ -26,7 +26,7 @@
 Windows（PowerShell）：
 
 ```powershell
-cd D:\web_002\web\jianspace
+cd D:\project\jianspace
 .\scripts\docker-deploy.ps1
 ```
 

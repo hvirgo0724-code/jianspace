@@ -1,6 +1,6 @@
 # 参考 web_001 的项目体验完善
 
-本轮参考项目为 `D:\web_001\interior-studio`。已将项目概览、设计步骤、工作台筛选/排序和复制、3D 顶视/自动环绕接入当前 `d:\web_002\web\jianspace` 工程。继续使用现有 React、FastAPI、数据库与权限/保存流程，无新增依赖或数据库迁移。
+本轮参考项目为 `D:\web_001\interior-studio`。已将项目概览、设计步骤、工作台筛选/排序和复制、3D 顶视/自动环绕接入当前 `D:\project\jianspace` 工程。继续使用现有 React、FastAPI、数据库与权限/保存流程，无新增依赖或数据库迁移。
 
 最终验证：**后端 188 项、前端 91 项测试通过**；**58/58 个业务接口操作**均获得至少一次 2xx 响应；严格类型检查、生产构建与 Ruff F 检查通过。桌面和手机模拟视口完成本轮新增功能验收。
 
@@ -78,7 +78,7 @@
 复验命令：
 
 ```powershell
-cd d:\web_002\web\jianspace
+cd D:\project\jianspace
 .\.venv\Scripts\python.exe -m pytest apps/api/tests -q -p scripts.function_audit_plugin --function-audit-output=artifacts/reference-improvements/api-operations.json
 npm.cmd test
 npm.cmd run build

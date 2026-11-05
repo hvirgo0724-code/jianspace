@@ -1,6 +1,6 @@
 # AI 模型、地域与备用模型配置
 
-更新：2026-10-23。配置文件为项目根目录 `d:\web_002\web\jianspace\.env`。不要修改前端代码或把密钥发到聊天。`.env.example` 是模板；运行中的后端读取 `.env`，保存后需重启 API，使用 Celery 时还需重启 worker。
+更新：2026-10-23。配置文件为项目根目录 `D:\project\jianspace\.env`。不要修改前端代码或把密钥发到聊天。`.env.example` 是模板；运行中的后端读取 `.env`，保存后需重启 API，使用 Celery 时还需重启 worker。
 
 ## 最常用配置
 
@@ -86,7 +86,7 @@ DASHSCOPE_IMAGE_FALLBACK_MODELS=qwen-image-2.0,qwen-image-2.0-pro-2026-06-22
 ## 本机检查
 
 ```powershell
-cd d:\web_002\web\jianspace
+cd D:\project\jianspace
 .\.venv\Scripts\python.exe scripts\check_ai_config.py
 ```
 

@@ -99,7 +99,7 @@
 环境：Node.js 22+、Python 3.12、SQLite（开发）/ PostgreSQL 17（生产）。
 
 ```powershell
-cd d:\web_002\web\jianspace
+cd D:\project\jianspace
 .\scripts\dev.ps1
 ```
 

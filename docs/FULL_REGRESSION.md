@@ -65,7 +65,7 @@
 
 ## 复验命令与维护入口
 
-在 `d:\web_002\web\jianspace` 执行：
+在 `D:\project\jianspace` 执行：
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest apps/api/tests -q -p scripts.function_audit_plugin
