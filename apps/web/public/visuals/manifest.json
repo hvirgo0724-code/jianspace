@@ -1,0 +1,347 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "file": "models/GlamVelvetSofa.glb",
+      "bytes": 3149844,
+      "sha256": "67202c74a1a33377771f162dc7fad612a6c9bd51ee15124c488e9851d9ac5266",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/GlamVelvetSofa/glTF-Binary/GlamVelvetSofa.glb",
+      "source": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlamVelvetSofa",
+      "license": "CC-BY-4.0",
+      "author": "© 2021 Wayfair, LLC; Eric Chadwick"
+    },
+    {
+      "file": "licenses/GlamVelvetSofa.md",
+      "bytes": 7428,
+      "sha256": "3c96b73fb52169fc1b79873dd70b4b783c3b04204f3033fe949247077fd59652",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/GlamVelvetSofa/README.md",
+      "source": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/GlamVelvetSofa/README.md",
+      "license": "CC-BY-4.0",
+      "author": "© 2021 Wayfair, LLC; Eric Chadwick"
+    },
+    {
+      "file": "models/SheenChair.glb",
+      "bytes": 4125648,
+      "sha256": "f0af2a2b102d28d540236306ae19f8fb36842df76bd38cf76f063f9bd2853399",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF-Binary/SheenChair.glb",
+      "source": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenChair",
+      "license": "CC0-1.0",
+      "author": "© 2020 Wayfair, LLC; Eric Chadwick"
+    },
+    {
+      "file": "licenses/SheenChair.md",
+      "bytes": 4250,
+      "sha256": "7bbb705e0532711b80a512161da64ab0f2a719412121daf24b8177bdbdbaca7a",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/README.md",
+      "source": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/README.md",
+      "license": "CC0-1.0",
+      "author": "© 2020 Wayfair, LLC; Eric Chadwick"
+    },
+    {
+      "file": "models/modern_coffee_table_02/scene.gltf",
+      "bytes": 4979,
+      "sha256": "59acb8abec936a74d52d83f9208aa0314accc4363586b5b94f89ab2d8b85ad76",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/modern_coffee_table_02/modern_coffee_table_02_1k.gltf",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_coffee_table_02/textures/modern_coffee_table_02_base_nor_gl_1k.jpg",
+      "bytes": 119341,
+      "sha256": "ade042c3569e7f6bc43b80b2ebf99959a60628f64cec5712c402c01fcee78bfd",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_02/modern_coffee_table_02_base_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_coffee_table_02/textures/modern_coffee_table_02_wood_nor_gl_1k.jpg",
+      "bytes": 340139,
+      "sha256": "99f6ceeb329280464f27bd246a926021df9ab3ce33512d70eb2f6c7a55a4963f",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_02/modern_coffee_table_02_wood_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_coffee_table_02/textures/modern_coffee_table_02_base_rough_1k.jpg",
+      "bytes": 220354,
+      "sha256": "2f9b6626c474b8a6205bdd49f0312a914e3dd2eadba4e94d5273cd0c29750ea7",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_02/modern_coffee_table_02_base_rough_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_coffee_table_02/modern_coffee_table_02.bin",
+      "bytes": 882992,
+      "sha256": "548427547069b51ef667ef34278d767fe529f383c1b62dbfb1cff97697bd974c",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/modern_coffee_table_02/modern_coffee_table_02.bin",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_coffee_table_02/textures/modern_coffee_table_02_wood_diff_1k.jpg",
+      "bytes": 710960,
+      "sha256": "305e52392c98f226e5a5c543258c45052061a1caf154a47d5fe21c9e4c69b216",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_02/modern_coffee_table_02_wood_diff_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_coffee_table_02/textures/modern_coffee_table_02_base_diff_1k.jpg",
+      "bytes": 153120,
+      "sha256": "51a59d991f668466126e43abae9f8572e907df55ac6de3ce36ce0580aebb92d4",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_02/modern_coffee_table_02_base_diff_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_coffee_table_02/textures/modern_coffee_table_02_wood_rough_1k.jpg",
+      "bytes": 523840,
+      "sha256": "11de733bd4e7564aeec8e9d5c65fd878fe0e82add127fd358ecc6b0bf02b3ba3",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_coffee_table_02/modern_coffee_table_02_wood_rough_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_coffee_table_02",
+      "license": "CC0-1.0",
+      "author": "Amin"
+    },
+    {
+      "file": "models/modern_wooden_cabinet/scene.gltf",
+      "bytes": 10960,
+      "sha256": "9c0765063297018e854d11bc27da3cbab3c33904a3be2f5c15f46635df7e857f",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/modern_wooden_cabinet/modern_wooden_cabinet_1k.gltf",
+      "source": "https://polyhaven.com/a/modern_wooden_cabinet",
+      "license": "CC0-1.0",
+      "author": "Patrik Pangerl"
+    },
+    {
+      "file": "models/modern_wooden_cabinet/modern_wooden_cabinet.bin",
+      "bytes": 1170136,
+      "sha256": "04e664a95f52c48d0caa8c3148ab7e4ad4a0554b37a2a5c0e39dc6ed6c46cafe",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/modern_wooden_cabinet/modern_wooden_cabinet.bin",
+      "source": "https://polyhaven.com/a/modern_wooden_cabinet",
+      "license": "CC0-1.0",
+      "author": "Patrik Pangerl"
+    },
+    {
+      "file": "models/modern_wooden_cabinet/textures/modern_wooden_cabinet_nor_gl_1k.jpg",
+      "bytes": 430053,
+      "sha256": "f08b3d0619a60e2eac19c9d9c0d7dc0e3eb75af2692d84b32ddfd12d857c15ab",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_wooden_cabinet/modern_wooden_cabinet_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_wooden_cabinet",
+      "license": "CC0-1.0",
+      "author": "Patrik Pangerl"
+    },
+    {
+      "file": "models/modern_wooden_cabinet/textures/modern_wooden_cabinet_arm_1k.jpg",
+      "bytes": 574020,
+      "sha256": "fad6df227ec6d431387b10bd244a0d087e89e6dce0b1c732df5c87f0a1def3f5",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_wooden_cabinet/modern_wooden_cabinet_arm_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_wooden_cabinet",
+      "license": "CC0-1.0",
+      "author": "Patrik Pangerl"
+    },
+    {
+      "file": "models/modern_wooden_cabinet/textures/modern_wooden_cabinet_diff_1k.jpg",
+      "bytes": 670353,
+      "sha256": "e494b67439da73775413d6aaea369ae05a8ebd7705be8df08dbcd2ee4fd545e4",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modern_wooden_cabinet/modern_wooden_cabinet_diff_1k.jpg",
+      "source": "https://polyhaven.com/a/modern_wooden_cabinet",
+      "license": "CC0-1.0",
+      "author": "Patrik Pangerl"
+    },
+    {
+      "file": "models/sofa_03/scene.gltf",
+      "bytes": 4465,
+      "sha256": "123f491bef4e9bda153bda770a5d12810bfc9b87ce56aa5973aed041ea17fd92",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/sofa_03/sofa_03_1k.gltf",
+      "source": "https://polyhaven.com/a/sofa_03",
+      "license": "CC0-1.0",
+      "author": "Fran Calvente"
+    },
+    {
+      "file": "models/sofa_03/textures/sofa_03_rough_1k.jpg",
+      "bytes": 170206,
+      "sha256": "b03b45c92365cddf787db158d7499915d6ba0d67ec51947453f6598f51361e47",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/sofa_03/sofa_03_rough_1k.jpg",
+      "source": "https://polyhaven.com/a/sofa_03",
+      "license": "CC0-1.0",
+      "author": "Fran Calvente"
+    },
+    {
+      "file": "models/sofa_03/sofa_03.bin",
+      "bytes": 228984,
+      "sha256": "e524350933d3d2a84c28f13bc042888a4768adeef88d630111015caede1c2e98",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/sofa_03/sofa_03.bin",
+      "source": "https://polyhaven.com/a/sofa_03",
+      "license": "CC0-1.0",
+      "author": "Fran Calvente"
+    },
+    {
+      "file": "models/sofa_03/textures/sofa_03_diff_1k.jpg",
+      "bytes": 151815,
+      "sha256": "c0bc221e4cacc3de75aff7744dab1600d008bcf70b5c67fb10ad6847b695a84e",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/sofa_03/sofa_03_diff_1k.jpg",
+      "source": "https://polyhaven.com/a/sofa_03",
+      "license": "CC0-1.0",
+      "author": "Fran Calvente"
+    },
+    {
+      "file": "models/sofa_03/textures/sofa_03_nor_gl_1k.jpg",
+      "bytes": 112563,
+      "sha256": "b961f9e9f38233bd58cdc5275614d3a1b37d5304f5ab86fd19d110657d386025",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/sofa_03/sofa_03_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/sofa_03",
+      "license": "CC0-1.0",
+      "author": "Fran Calvente"
+    },
+    {
+      "file": "models/dining_table/scene.gltf",
+      "bytes": 4165,
+      "sha256": "6af2b850b0524d364b4c89869c6c70112b8d340317a256cf35fbe739040654c7",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/dining_table/dining_table_1k.gltf",
+      "source": "https://polyhaven.com/a/dining_table",
+      "license": "CC0-1.0",
+      "author": "Aron Łyczek"
+    },
+    {
+      "file": "models/dining_table/textures/dining_table_nor_gl_1k.jpg",
+      "bytes": 707020,
+      "sha256": "156d4bd665864b806973290c1c702dda3fc80736c91623311992f2ca2e773d84",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/dining_table/dining_table_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/dining_table",
+      "license": "CC0-1.0",
+      "author": "Aron Łyczek"
+    },
+    {
+      "file": "models/dining_table/textures/dining_table_diff_1k.jpg",
+      "bytes": 852259,
+      "sha256": "af239dc33b8444c5d9ca653d502ee1a1f0bac1845a7a522a00eae6c3a0d62b97",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/dining_table/dining_table_diff_1k.jpg",
+      "source": "https://polyhaven.com/a/dining_table",
+      "license": "CC0-1.0",
+      "author": "Aron Łyczek"
+    },
+    {
+      "file": "models/dining_table/textures/dining_table_arm_1k.jpg",
+      "bytes": 689497,
+      "sha256": "f50a5105bb4c25985c726b1fa65b04bbfc5972794d08a970bd1a97c435159ad4",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/dining_table/dining_table_arm_1k.jpg",
+      "source": "https://polyhaven.com/a/dining_table",
+      "license": "CC0-1.0",
+      "author": "Aron Łyczek"
+    },
+    {
+      "file": "models/dining_table/dining_table.bin",
+      "bytes": 30992,
+      "sha256": "63a493a0bf2eeea4ecc94e5e4cb90c7780fd6cb79e82feed1d3db89ed2b63305",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/dining_table/dining_table.bin",
+      "source": "https://polyhaven.com/a/dining_table",
+      "license": "CC0-1.0",
+      "author": "Aron Łyczek"
+    },
+    {
+      "file": "textures/wood-color.jpg",
+      "bytes": 734493,
+      "sha256": "2a1c07687b6dbb214c4b9213739c6d92d425f1f0fc8ab3ac157f105d78240789",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_floor/wood_floor_diff_1k.jpg",
+      "source": "https://polyhaven.com/a/wood_floor",
+      "license": "CC0-1.0",
+      "author": "Dimitrios Savva"
+    },
+    {
+      "file": "textures/wood-normal.jpg",
+      "bytes": 423303,
+      "sha256": "452247f0d0d1b7fc7f8324ff3b6ed60bcc6de1405f4284eeb8d9bce90d4939c2",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_floor/wood_floor_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/wood_floor",
+      "license": "CC0-1.0",
+      "author": "Dimitrios Savva"
+    },
+    {
+      "file": "textures/wood-arm.jpg",
+      "bytes": 447855,
+      "sha256": "a84d9457fa35a76cf8a41da8bcef55387230c6b236819de878799585eda76059",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_floor/wood_floor_arm_1k.jpg",
+      "source": "https://polyhaven.com/a/wood_floor",
+      "license": "CC0-1.0",
+      "author": "Dimitrios Savva"
+    },
+    {
+      "file": "lighting/studio.hdr",
+      "bytes": 1615248,
+      "sha256": "e7cfda5f4e98e623db12b8bfd0184e048488e4855d9c83e2751fb44a32e80c45",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr",
+      "source": "https://polyhaven.com/a/studio_small_09",
+      "license": "CC0-1.0",
+      "author": "Sergej Majboroda"
+    },
+    {
+      "file": "textures/roof-normal.jpg",
+      "bytes": 533448,
+      "sha256": "b0478c93821c9cf83b9c0f1ed8c2d46e335b336a2236f7c220364bf0a8bbf30d",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles_14/roof_tiles_14_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/roof_tiles_14",
+      "license": "CC0-1.0",
+      "author": "Rob Tuytel"
+    },
+    {
+      "file": "textures/roof-roughness.jpg",
+      "bytes": 360731,
+      "sha256": "8691284168fa16544c3c1bd481708d41f448ae7554d58684e705e25402bb8bd1",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles_14/roof_tiles_14_rough_1k.jpg",
+      "source": "https://polyhaven.com/a/roof_tiles_14",
+      "license": "CC0-1.0",
+      "author": "Rob Tuytel"
+    },
+    {
+      "file": "textures/plaster-normal.jpg",
+      "bytes": 960241,
+      "sha256": "0f1b4ea0c4707ea133f133c020923bddd8610a43a153281dad15d49f39ad9624",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_wall_02/plastered_wall_02_nor_gl_1k.jpg",
+      "source": "https://polyhaven.com/a/plastered_wall_02",
+      "license": "CC0-1.0",
+      "author": "Charlotte Baglioni"
+    },
+    {
+      "file": "textures/plaster-roughness.jpg",
+      "bytes": 173930,
+      "sha256": "6c317c0e647b02259601690bd33501bbc825858c6d1715cd0f8f46a5b51f6db4",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_wall_02/plastered_wall_02_rough_1k.jpg",
+      "source": "https://polyhaven.com/a/plastered_wall_02",
+      "license": "CC0-1.0",
+      "author": "Charlotte Baglioni"
+    },
+    {
+      "file": "lighting/daylight.hdr",
+      "bytes": 1475077,
+      "sha256": "ee70fb8c8fb3e34566802191d83b299e179ecc392b97639e6c750f66e161c8e2",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kiara_1_dawn_1k.hdr",
+      "source": "https://polyhaven.com/a/kiara_1_dawn",
+      "license": "CC0-1.0",
+      "author": "Greg Zaal"
+    },
+    {
+      "file": "lighting/sky.hdr",
+      "bytes": 1173154,
+      "sha256": "206c67e3a1b992282821cf06662bdd69bbb4915c1c4444a66338a40d6a7d4e34",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kloppenheim_06_puresky_1k.hdr",
+      "source": "https://polyhaven.com/a/kloppenheim_06_puresky",
+      "license": "CC0-1.0",
+      "author": "Greg Zaal, Jarod Guest"
+    },
+    {
+      "file": "lighting/interior.hdr",
+      "bytes": 1476953,
+      "sha256": "a02c9615adeba91a753c3e4737c3ce7a719273df822eeaa85d24982bd43c9ecb",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/lebombo_1k.hdr",
+      "source": "https://polyhaven.com/a/lebombo",
+      "license": "CC0-1.0",
+      "author": "Greg Zaal"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+floor_id,room_id,record_id,target_type,target_label,measurement_type,value,unit,method,photo_filename,measured_at,notes
+floor-1,room-living,m-living-width,room,客厅,width,4,m,laser,,2026-10-22T10:00:00+08:00,演示数据 请替换为实际测量
+floor-1,room-living,m-living-depth,room,客厅,depth,5,m,laser,,2026-10-22T10:01:00+08:00,净尺寸
+floor-1,room-living,m-living-height,room,客厅,height,2800,mm,laser,,2026-10-22T10:02:00+08:00,净高
+floor-1,room-bedroom,m-bedroom-width,room,卧室,width,320,cm,tape,,2026-10-22T10:03:00+08:00,净尺寸
+floor-1,room-bedroom,m-bedroom-depth,room,卧室,depth,5000,mm,laser,,2026-10-22T10:04:00+08:00,净尺寸
+floor-1,room-bedroom,m-bedroom-height,room,卧室,height,2800,mm,laser,,2026-10-22T10:05:00+08:00,净高
+floor-1,,m-shared-thickness,wall,客厅卧室共用墙,thickness,200,mm,tape,,2026-10-22T10:06:00+08:00,未知时留空并在界面补充 不可猜测
+floor-1,room-living,m-entry-width,opening,入户门,width,900,mm,tape,,2026-10-22T10:07:00+08:00,洞口净宽
+floor-1,room-living,m-entry-height,opening,入户门,height,2100,mm,tape,,2026-10-22T10:08:00+08:00,洞口净高
+floor-1,room-living,m-entry-offset,opening,入户门,offset,900,mm,tape,,2026-10-22T10:09:00+08:00,沿所关联墙起点至洞口起点 实际导入需在界面关联墙
+floor-1,room-living,m-window-bottom,opening,客厅窗,bottom,900,mm,tape,,2026-10-22T10:10:00+08:00,窗台离完成面地面高度
+

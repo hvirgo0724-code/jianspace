@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>筑间 · 模型来源与授权</title>
+    <style>
+      body {
+        font:
+          14px/1.9 system-ui,
+          'Microsoft YaHei',
+          sans-serif;
+        color: #414d35;
+        background: #faf9f3;
+        max-width: 850px;
+        margin: 50px auto;
+        padding: 0 25px;
+      }
+      h1 {
+        font-size: 25px;
+        font-weight: 500;
+      }
+      h2 {
+        font-size: 18px;
+        margin-top: 32px;
+      }
+      a {
+        color: #6c8050;
+      }
+      li {
+        margin: 12px 0;
+      }
+      small {
+        color: #858b78;
+      }
+      code {
+        background: #edf0e6;
+        padding: 2px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>筑间 · 三维模型来源与使用说明</h1>
+    <p>
+      三维造型用于帮助比较材质、家具比例与空间关系。显示模型会按用户录入的宽、深、高进行适配，颜色可随装修风格调整；适配后不代表原商品的真实型号、尺寸或可购买状态。预算仍以场景中独立记录的价格来源为准。
+    </p>
+    <h2>外部家具模型</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlamVelvetSofa"
+          >Glam Velvet Sofa</a
+        >
+        — © 2021 Wayfair, LLC. Eric Chadwick for Everything.
+        <a href="https://creativecommons.org/licenses/by/4.0/"
+          >Creative Commons Attribution 4.0 International</a
+        >。原授权说明保存在
+        <a href="licenses/GlamVelvetSofa.md">本地 README</a
+        >。修改：本地托管；去除附带灯光；按场景尺寸缩放与对齐；根据风格调整布料颜色和光泽。
+      </li>
+      <li>
+        <a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SheenChair"
+          >Sheen Chair</a
+        >
+        — © 2020 Wayfair, LLC. Eric Chadwick for Everything.
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a
+        >。原说明保存在 <a href="licenses/SheenChair.md">本地 README</a>。按场景尺寸及配色适配。
+      </li>
+      <li>
+        <a href="https://polyhaven.com/a/modern_coffee_table_02">Modern Coffee Table 02</a> — Amin /
+        Poly Haven，CC0。
+      </li>
+      <li>
+        <a href="https://polyhaven.com/a/modern_wooden_cabinet">Modern Wooden Cabinet</a> — Patrik
+        Pangerl / Poly Haven，CC0。
+      </li>
+    </ul>
+    <h2>材质与环境光</h2>
+    <p>自然日光环境：<a href="https://polyhaven.com/a/kloppenheim_06_puresky">Kloppenheim 06 (Pure Sky)</a> — Greg Zaal、Jarod Guest，Poly Haven CC0，1K 本地 HDR。</p>
+    <p>渲染增强资源（1K，本地托管）：<a href="https://polyhaven.com/a/roof_tiles_14">Roof Tiles 14</a> — Rob Tuytel；<a href="https://polyhaven.com/a/plastered_wall_02">Plastered Wall 02</a> — Charlotte Baglioni。使用法线与粗糙度，颜色仍按设计样式生成。<a href="https://polyhaven.com/a/kiara_1_dawn">Kiara 1 Dawn</a> 与 <a href="https://polyhaven.com/a/lebombo">Lebombo</a> — Greg Zaal，提供室外/室内 HDR 环境光。以上均为 Poly Haven CC0，来源及哈希见清单。</p>
+    <p>新增家具：<a href="https://polyhaven.com/a/sofa_03">Sofa 03</a> — Fran Calvente / Poly Haven，CC0；<a href="https://polyhaven.com/a/dining_table">Dining Table</a> — Aron Łyczek / Poly Haven，CC0。均本地托管完整 1K 贴图与几何，按场景尺寸适配。</p>
+    <ul>
+      <li>
+        <a href="https://polyhaven.com/a/wood_floor">Wood Floor</a> — Dimitrios Savva / Poly
+        Haven，CC0。颜色、法线、AO/粗糙度贴图以 1K 分辨率本地托管，按约 1.7 m 的材质尺度铺贴。
+      </li>
+      <li>
+        <a href="https://polyhaven.com/a/studio_small_09">Studio Small 09</a> — Sergej Majboroda /
+        Poly Haven，CC0。1K HDR 环境光，本地托管。
+      </li>
+    </ul>
+    <p>
+      Poly Haven 资源为公开免费资产，授权参见
+      <a href="https://polyhaven.com/license">官方许可说明</a>。本应用不实时访问其
+      API；构建时使用官方 API 选择并校验资源。各文件来源和 SHA-256 记录在
+      <a href="manifest.json">资源清单</a>。
+    </p>
+    <h2>本项目模型与展示边界</h2>
+    <p>
+      床、高柜、书架及加载失败时的替代家具由本项目参数化建模。布料微纹理由本地代码生成；墙体、门窗、踢脚线与楼板来自实测场景。俯览模式会剖切前侧墙体，房间视角保留完整墙高。照片、隐藏结构和材质色差无法由这些模型自动确认。
+    </p>
+    <small>资源说明更新于 2026-10-23。第三方作者不代表认可或参与本项目。</small>
+  </body>
+</html>

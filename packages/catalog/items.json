@@ -1,0 +1,832 @@
+[
+  {
+    "id": "sofa",
+    "name": "简约三人沙发",
+    "category": "sofa",
+    "group": "living",
+    "modelKind": "sofa",
+    "sizeMm": [
+      2200,
+      900,
+      850
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "sofa-small",
+    "name": "小户型双人沙发",
+    "category": "sofa",
+    "group": "living",
+    "modelKind": "sofa",
+    "sizeMm": [
+      1700,
+      800,
+      800
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "armchair",
+    "name": "弧形休闲椅",
+    "category": "chair",
+    "group": "living",
+    "modelKind": "chair",
+    "sizeMm": [
+      800,
+      800,
+      780
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "coffee-table",
+    "name": "原木长茶几",
+    "category": "coffee-table",
+    "group": "living",
+    "modelKind": "coffee-table",
+    "sizeMm": [
+      1100,
+      600,
+      400
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "chaise-sofa",
+    "name": "L 形贵妃沙发",
+    "category": "chaise-sofa",
+    "group": "living",
+    "modelKind": "chaise-sofa",
+    "sizeMm": [
+      2800,
+      1700,
+      850
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "ottoman",
+    "name": "软包脚凳",
+    "category": "ottoman",
+    "group": "living",
+    "modelKind": "ottoman",
+    "sizeMm": [
+      650,
+      550,
+      420
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "bench",
+    "name": "换鞋长凳",
+    "category": "bench",
+    "group": "living",
+    "modelKind": "bench",
+    "sizeMm": [
+      1000,
+      380,
+      450
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "round-coffee",
+    "name": "圆形边几",
+    "category": "round-table",
+    "group": "living",
+    "modelKind": "round-table",
+    "sizeMm": [
+      550,
+      550,
+      480
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "bed-double",
+    "name": "1.5 米双人床",
+    "category": "bed",
+    "group": "bedroom",
+    "modelKind": "bed",
+    "sizeMm": [
+      1500,
+      2000,
+      850
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "bed-king",
+    "name": "1.8 米双人床",
+    "category": "bed",
+    "group": "bedroom",
+    "modelKind": "bed",
+    "sizeMm": [
+      1800,
+      2100,
+      900
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "bed-single",
+    "name": "单人床",
+    "category": "bed",
+    "group": "bedroom",
+    "modelKind": "bed",
+    "sizeMm": [
+      1000,
+      2000,
+      750
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "nightstand",
+    "name": "床头柜",
+    "category": "cabinet",
+    "group": "bedroom",
+    "modelKind": "cabinet",
+    "sizeMm": [
+      450,
+      400,
+      500
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "dressing-table",
+    "name": "带镜梳妆台",
+    "category": "dressing-table",
+    "group": "bedroom",
+    "modelKind": "dressing-table",
+    "sizeMm": [
+      1000,
+      450,
+      1500
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "dining-table",
+    "name": "四人餐桌",
+    "category": "table",
+    "group": "dining",
+    "modelKind": "table",
+    "sizeMm": [
+      1400,
+      800,
+      750
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "round-dining",
+    "name": "圆形餐桌",
+    "category": "round-table",
+    "group": "dining",
+    "modelKind": "round-table",
+    "sizeMm": [
+      1200,
+      1200,
+      750
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "dining-chair",
+    "name": "木框餐椅",
+    "category": "dining-chair",
+    "group": "dining",
+    "modelKind": "dining-chair",
+    "sizeMm": [
+      480,
+      520,
+      850
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "bar-stool",
+    "name": "高脚吧椅",
+    "category": "bar-stool",
+    "group": "dining",
+    "modelKind": "bar-stool",
+    "sizeMm": [
+      450,
+      450,
+      1050
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "kitchen-cabinet",
+    "name": "双门厨房地柜",
+    "category": "kitchen-cabinet",
+    "group": "dining",
+    "modelKind": "kitchen-cabinet",
+    "sizeMm": [
+      1200,
+      600,
+      850
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "kitchen-island",
+    "name": "独立中岛台",
+    "category": "kitchen-cabinet",
+    "group": "dining",
+    "modelKind": "kitchen-cabinet",
+    "sizeMm": [
+      1600,
+      800,
+      900
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "sink-cabinet",
+    "name": "水槽组合柜",
+    "category": "sink-cabinet",
+    "group": "dining",
+    "modelKind": "sink-cabinet",
+    "sizeMm": [
+      1000,
+      600,
+      1080
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "desk",
+    "name": "居家办公桌",
+    "category": "table",
+    "group": "study",
+    "modelKind": "table",
+    "sizeMm": [
+      1200,
+      600,
+      750
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "chair",
+    "name": "办公椅",
+    "category": "chair",
+    "group": "study",
+    "modelKind": "chair",
+    "sizeMm": [
+      550,
+      550,
+      950
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "bookshelf",
+    "name": "开放书架",
+    "category": "bookshelf",
+    "group": "study",
+    "modelKind": "bookshelf",
+    "sizeMm": [
+      800,
+      350,
+      1800
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "wardrobe",
+    "name": "双门衣柜",
+    "category": "wardrobe",
+    "group": "storage",
+    "modelKind": "wardrobe",
+    "sizeMm": [
+      1200,
+      600,
+      2200
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "sideboard",
+    "name": "矮款收纳柜",
+    "category": "cabinet",
+    "group": "storage",
+    "modelKind": "cabinet",
+    "sizeMm": [
+      1400,
+      400,
+      800
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "tv-console",
+    "name": "电视边柜",
+    "category": "cabinet",
+    "group": "storage",
+    "modelKind": "cabinet",
+    "sizeMm": [
+      1800,
+      400,
+      450
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "chest",
+    "name": "五斗抽屉柜",
+    "category": "chest",
+    "group": "storage",
+    "modelKind": "chest",
+    "sizeMm": [
+      800,
+      450,
+      1100
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "shoe-cabinet",
+    "name": "玄关鞋柜",
+    "category": "shoe-cabinet",
+    "group": "storage",
+    "modelKind": "shoe-cabinet",
+    "sizeMm": [
+      1000,
+      350,
+      1200
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "fridge",
+    "name": "双门冷藏冰箱",
+    "category": "refrigerator",
+    "group": "appliances",
+    "modelKind": "refrigerator",
+    "sizeMm": [
+      650,
+      680,
+      1800
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": [
+      "家电",
+      "冰箱",
+      "fridge",
+      "refrigerator"
+    ]
+  },
+  {
+    "id": "fridge-large",
+    "name": "对开门大冰箱",
+    "category": "refrigerator",
+    "group": "appliances",
+    "modelKind": "refrigerator",
+    "sizeMm": [
+      910,
+      720,
+      1800
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "washer",
+    "name": "滚筒洗衣机",
+    "category": "washing-machine",
+    "group": "appliances",
+    "modelKind": "washing-machine",
+    "sizeMm": [
+      600,
+      600,
+      850
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "dryer",
+    "name": "滚筒烘干机",
+    "category": "dryer",
+    "group": "appliances",
+    "modelKind": "dryer",
+    "sizeMm": [
+      600,
+      650,
+      850
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "dishwasher",
+    "name": "独立洗碗机",
+    "category": "dishwasher",
+    "group": "appliances",
+    "modelKind": "dishwasher",
+    "sizeMm": [
+      600,
+      600,
+      845
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "oven",
+    "name": "电烤箱",
+    "category": "oven",
+    "group": "appliances",
+    "modelKind": "oven",
+    "sizeMm": [
+      600,
+      570,
+      595
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "microwave",
+    "name": "台式微波炉",
+    "category": "microwave",
+    "group": "appliances",
+    "modelKind": "microwave",
+    "sizeMm": [
+      520,
+      420,
+      300
+    ],
+    "baseZMm": 850,
+    "placement": "surface",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "hood",
+    "name": "壁挂抽油烟机",
+    "category": "range-hood",
+    "group": "appliances",
+    "modelKind": "range-hood",
+    "sizeMm": [
+      900,
+      500,
+      650
+    ],
+    "baseZMm": 1500,
+    "placement": "wall",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "cooktop",
+    "name": "双眼燃气灶",
+    "category": "cooktop",
+    "group": "appliances",
+    "modelKind": "cooktop",
+    "sizeMm": [
+      760,
+      450,
+      80
+    ],
+    "baseZMm": 850,
+    "placement": "surface",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "wall-ac",
+    "name": "壁挂空调",
+    "category": "wall-ac",
+    "group": "appliances",
+    "modelKind": "wall-ac",
+    "sizeMm": [
+      900,
+      230,
+      320
+    ],
+    "baseZMm": 1950,
+    "placement": "wall",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": [
+      "空调",
+      "挂机",
+      "air conditioner",
+      "ac"
+    ]
+  },
+  {
+    "id": "floor-ac",
+    "name": "立式柜机空调",
+    "category": "floor-ac",
+    "group": "appliances",
+    "modelKind": "floor-ac",
+    "sizeMm": [
+      480,
+      400,
+      1800
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "tv",
+    "name": "65 英寸电视与底座",
+    "category": "television",
+    "group": "appliances",
+    "modelKind": "television",
+    "sizeMm": [
+      1450,
+      300,
+      1000
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": [
+      "电视",
+      "tv",
+      "television"
+    ]
+  },
+  {
+    "id": "purifier",
+    "name": "空气净化器",
+    "category": "air-purifier",
+    "group": "appliances",
+    "modelKind": "air-purifier",
+    "sizeMm": [
+      350,
+      350,
+      650
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#d2d7d4",
+    "keywords": []
+  },
+  {
+    "id": "vanity",
+    "name": "镜柜洗手台",
+    "category": "vanity",
+    "group": "bathroom",
+    "modelKind": "vanity",
+    "sizeMm": [
+      800,
+      520,
+      1700
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "toilet",
+    "name": "一体坐便器",
+    "category": "toilet",
+    "group": "bathroom",
+    "modelKind": "toilet",
+    "sizeMm": [
+      420,
+      700,
+      780
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "bathtub",
+    "name": "独立浴缸",
+    "category": "bathtub",
+    "group": "bathroom",
+    "modelKind": "bathtub",
+    "sizeMm": [
+      1600,
+      750,
+      600
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "shower",
+    "name": "方形淋浴房",
+    "category": "shower",
+    "group": "bathroom",
+    "modelKind": "shower",
+    "sizeMm": [
+      900,
+      900,
+      2000
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "floor-lamp",
+    "name": "布罩落地灯",
+    "category": "floor-lamp",
+    "group": "decor",
+    "modelKind": "floor-lamp",
+    "sizeMm": [
+      450,
+      450,
+      1600
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "table-lamp",
+    "name": "床头台灯",
+    "category": "table-lamp",
+    "group": "decor",
+    "modelKind": "table-lamp",
+    "sizeMm": [
+      280,
+      280,
+      450
+    ],
+    "baseZMm": 500,
+    "placement": "surface",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  },
+  {
+    "id": "plant",
+    "name": "落地绿植",
+    "category": "plant",
+    "group": "decor",
+    "modelKind": "plant",
+    "sizeMm": [
+      650,
+      650,
+      1300
+    ],
+    "baseZMm": 0,
+    "placement": "floor",
+    "priceMinor": null,
+    "color": "#b4a17f",
+    "keywords": []
+  }
+]

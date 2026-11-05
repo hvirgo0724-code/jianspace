@@ -1,0 +1,515 @@
+{
+  "schemaVersion": "1.0",
+  "sceneId": "22222222-2222-4222-8222-222222222222",
+  "geometryVersionId": "11111111-1111-4111-8111-111111111111",
+  "unit": "mm",
+  "coordinateSystem": "RIGHT_HANDED_Z_UP",
+  "floors": [
+    {
+      "id": "floor-1",
+      "name": "一层",
+      "elevationMm": 0,
+      "rooms": [
+        {
+          "id": "room-living",
+          "name": "客厅",
+          "type": "living",
+          "boundaryMm": [
+            [
+              0,
+              0
+            ],
+            [
+              4000,
+              0
+            ],
+            [
+              4000,
+              5000
+            ],
+            [
+              0,
+              5000
+            ]
+          ],
+          "heightMm": 2800,
+          "computedAreaMm2": 20000000,
+          "wallRefs": [
+            {
+              "wallId": "wall-south",
+              "side": "left"
+            },
+            {
+              "wallId": "wall-shared",
+              "side": "left"
+            },
+            {
+              "wallId": "wall-north",
+              "side": "left"
+            },
+            {
+              "wallId": "wall-west",
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "id": "room-bedroom",
+          "name": "卧室",
+          "type": "bedroom",
+          "boundaryMm": [
+            [
+              4200,
+              0
+            ],
+            [
+              7400,
+              0
+            ],
+            [
+              7400,
+              5000
+            ],
+            [
+              4200,
+              5000
+            ]
+          ],
+          "heightMm": 2800,
+          "computedAreaMm2": 16000000,
+          "wallRefs": [
+            {
+              "wallId": "wall-south",
+              "side": "left"
+            },
+            {
+              "wallId": "wall-east",
+              "side": "left"
+            },
+            {
+              "wallId": "wall-north",
+              "side": "left"
+            },
+            {
+              "wallId": "wall-shared",
+              "side": "right"
+            }
+          ]
+        }
+      ],
+      "walls": [
+        {
+          "id": "wall-south",
+          "startMm": [
+            -100,
+            -100
+          ],
+          "endMm": [
+            7500,
+            -100
+          ],
+          "thicknessMm": 200,
+          "heightMm": 2800,
+          "structuralRole": "unknown",
+          "locked": true
+        },
+        {
+          "id": "wall-east",
+          "startMm": [
+            7500,
+            -100
+          ],
+          "endMm": [
+            7500,
+            5100
+          ],
+          "thicknessMm": 200,
+          "heightMm": 2800,
+          "structuralRole": "unknown",
+          "locked": true
+        },
+        {
+          "id": "wall-north",
+          "startMm": [
+            7500,
+            5100
+          ],
+          "endMm": [
+            -100,
+            5100
+          ],
+          "thicknessMm": 200,
+          "heightMm": 2800,
+          "structuralRole": "unknown",
+          "locked": true
+        },
+        {
+          "id": "wall-west",
+          "startMm": [
+            -100,
+            5100
+          ],
+          "endMm": [
+            -100,
+            -100
+          ],
+          "thicknessMm": 200,
+          "heightMm": 2800,
+          "structuralRole": "unknown",
+          "locked": true
+        },
+        {
+          "id": "wall-shared",
+          "startMm": [
+            4100,
+            -100
+          ],
+          "endMm": [
+            4100,
+            5100
+          ],
+          "thicknessMm": 200,
+          "heightMm": 2800,
+          "structuralRole": "unknown",
+          "locked": true
+        }
+      ],
+      "openings": [
+        {
+          "id": "door-entry",
+          "kind": "door",
+          "wallId": "wall-south",
+          "offsetMm": 900,
+          "widthMm": 900,
+          "bottomMm": 0,
+          "heightMm": 2100,
+          "connects": [
+            "room-living",
+            null
+          ],
+          "swing": {
+            "hinge": "start",
+            "direction": "ccw",
+            "angleDeg": 90,
+            "roomId": "room-living"
+          }
+        },
+        {
+          "id": "door-bedroom",
+          "kind": "door",
+          "wallId": "wall-shared",
+          "offsetMm": 1100,
+          "widthMm": 900,
+          "bottomMm": 0,
+          "heightMm": 2100,
+          "connects": [
+            "room-living",
+            "room-bedroom"
+          ],
+          "swing": {
+            "hinge": "start",
+            "direction": "ccw",
+            "angleDeg": 90,
+            "roomId": "room-living"
+          }
+        },
+        {
+          "id": "window-living",
+          "kind": "window",
+          "wallId": "wall-north",
+          "offsetMm": 4700,
+          "widthMm": 1600,
+          "bottomMm": 900,
+          "heightMm": 1500,
+          "connects": [
+            "room-living",
+            null
+          ]
+        }
+      ],
+      "obstacles": []
+    }
+  ],
+  "measurements": [
+    {
+      "id": "m-living-width",
+      "floorId": "floor-1",
+      "targetType": "room",
+      "targetId": "room-living",
+      "measurementType": "width",
+      "rawValue": 4,
+      "rawUnit": "m",
+      "normalizedMm": 4000,
+      "method": "laser",
+      "measuredAt": "2026-10-22T10:00:00+08:00",
+      "sourceAssetIds": [],
+      "notes": "虚构测试记录"
+    },
+    {
+      "id": "m-living-depth",
+      "floorId": "floor-1",
+      "targetType": "room",
+      "targetId": "room-living",
+      "measurementType": "depth",
+      "rawValue": 5,
+      "rawUnit": "m",
+      "normalizedMm": 5000,
+      "method": "laser",
+      "measuredAt": "2026-10-22T10:01:00+08:00",
+      "sourceAssetIds": [],
+      "notes": "虚构测试记录"
+    },
+    {
+      "id": "m-bedroom-width",
+      "floorId": "floor-1",
+      "targetType": "room",
+      "targetId": "room-bedroom",
+      "measurementType": "width",
+      "rawValue": 320,
+      "rawUnit": "cm",
+      "normalizedMm": 3200,
+      "method": "tape",
+      "measuredAt": "2026-10-22T10:02:00+08:00",
+      "sourceAssetIds": [],
+      "notes": "虚构测试记录"
+    },
+    {
+      "id": "m-bedroom-depth",
+      "floorId": "floor-1",
+      "targetType": "room",
+      "targetId": "room-bedroom",
+      "measurementType": "depth",
+      "rawValue": 5000,
+      "rawUnit": "mm",
+      "normalizedMm": 5000,
+      "method": "laser",
+      "measuredAt": "2026-10-22T10:03:00+08:00",
+      "sourceAssetIds": [],
+      "notes": "虚构测试记录"
+    },
+    {
+      "id": "m-height",
+      "floorId": "floor-1",
+      "targetType": "room",
+      "targetId": "room-living",
+      "measurementType": "height",
+      "rawValue": 2800,
+      "rawUnit": "mm",
+      "normalizedMm": 2800,
+      "method": "laser",
+      "measuredAt": "2026-10-22T10:04:00+08:00",
+      "sourceAssetIds": [],
+      "notes": "示例两房均确认2800mm"
+    },
+    {
+      "id": "m-shared-thickness",
+      "floorId": "floor-1",
+      "targetType": "wall",
+      "targetId": "wall-shared",
+      "measurementType": "thickness",
+      "rawValue": 20,
+      "rawUnit": "cm",
+      "normalizedMm": 200,
+      "method": "tape",
+      "measuredAt": "2026-10-22T10:05:00+08:00",
+      "sourceAssetIds": [],
+      "notes": "示例全部墙厚均确认200mm，不代表真实住宅"
+    }
+  ],
+  "confirmation": {
+    "status": "confirmed",
+    "confirmedBy": "44444444-4444-4444-8444-444444444444",
+    "confirmedAt": "2026-10-22T10:10:00+08:00",
+    "measurementRevision": 1
+  },
+  "layout": {
+    "id": "33333333-3333-4333-8333-333333333333",
+    "name": "原木风测试布局",
+    "styleId": "warm-wood",
+    "furniture": [
+      {
+        "id": "f-sofa",
+        "floorId": "floor-1",
+        "roomId": "room-living",
+        "skuId": "DEMO-SOFA-2200",
+        "positionMm": [
+          1500,
+          3800,
+          0
+        ],
+        "sizeMm": [
+          2200,
+          900,
+          900
+        ],
+        "rotationDeg": 0,
+        "locked": false
+      },
+      {
+        "id": "f-table",
+        "floorId": "floor-1",
+        "roomId": "room-living",
+        "skuId": "DEMO-TABLE-1100",
+        "positionMm": [
+          1800,
+          2350,
+          0
+        ],
+        "sizeMm": [
+          1100,
+          600,
+          400
+        ],
+        "rotationDeg": 0,
+        "locked": false
+      },
+      {
+        "id": "f-bed",
+        "floorId": "floor-1",
+        "roomId": "room-bedroom",
+        "skuId": "DEMO-BED-1500",
+        "positionMm": [
+          5800,
+          3400,
+          0
+        ],
+        "sizeMm": [
+          1500,
+          2000,
+          850
+        ],
+        "rotationDeg": 0,
+        "locked": true
+      },
+      {
+        "id": "f-wardrobe",
+        "floorId": "floor-1",
+        "roomId": "room-bedroom",
+        "skuId": "DEMO-WARDROBE-1800",
+        "positionMm": [
+          7050,
+          1400,
+          0
+        ],
+        "sizeMm": [
+          600,
+          1800,
+          2200
+        ],
+        "rotationDeg": 0,
+        "locked": false
+      }
+    ],
+    "materials": [
+      {
+        "targetType": "room_floor",
+        "targetId": "room-living",
+        "materialId": "DEMO-WOOD-LIGHT"
+      },
+      {
+        "targetType": "room_floor",
+        "targetId": "room-bedroom",
+        "materialId": "DEMO-WOOD-LIGHT"
+      }
+    ],
+    "cameraViews": [
+      {
+        "id": "camera-living",
+        "floorId": "floor-1",
+        "roomId": "room-living",
+        "positionMm": [
+          3500,
+          800,
+          1600
+        ],
+        "targetMm": [
+          1400,
+          3500,
+          1200
+        ],
+        "fovDeg": 60,
+        "aspectRatio": 1.5
+      },
+      {
+        "id": "camera-bedroom",
+        "floorId": "floor-1",
+        "roomId": "room-bedroom",
+        "positionMm": [
+          4500,
+          1000,
+          1600
+        ],
+        "targetMm": [
+          6000,
+          3300,
+          900
+        ],
+        "fovDeg": 60,
+        "aspectRatio": 1.5
+      }
+    ],
+    "catalogSnapshot": [
+      {
+        "skuId": "DEMO-SOFA-2200",
+        "name": "演示双人沙发",
+        "sizeMm": [
+          2200,
+          900,
+          900
+        ],
+        "priceMinor": 270000,
+        "currency": "CNY",
+        "sourceType": "fixture",
+        "quotedAt": "2026-10-22T10:00:00+08:00",
+        "modelAssetId": null,
+        "productUrl": null
+      },
+      {
+        "skuId": "DEMO-TABLE-1100",
+        "name": "演示茶几",
+        "sizeMm": [
+          1100,
+          600,
+          400
+        ],
+        "priceMinor": 150000,
+        "currency": "CNY",
+        "sourceType": "fixture",
+        "quotedAt": "2026-10-22T10:00:00+08:00",
+        "modelAssetId": null,
+        "productUrl": null
+      },
+      {
+        "skuId": "DEMO-BED-1500",
+        "name": "演示床",
+        "sizeMm": [
+          1500,
+          2000,
+          850
+        ],
+        "priceMinor": 320000,
+        "currency": "CNY",
+        "sourceType": "fixture",
+        "quotedAt": "2026-10-22T10:00:00+08:00",
+        "modelAssetId": null,
+        "productUrl": null
+      },
+      {
+        "skuId": "DEMO-WARDROBE-1800",
+        "name": "演示衣柜",
+        "sizeMm": [
+          600,
+          1800,
+          2200
+        ],
+        "priceMinor": 130000,
+        "currency": "CNY",
+        "sourceType": "fixture",
+        "quotedAt": "2026-10-22T10:00:00+08:00",
+        "modelAssetId": null,
+        "productUrl": null
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,114 @@
+name: jianspace
+x-api-build: &api_build
+  context: .
+  dockerfile: infra/api.Dockerfile
+  args:
+    PIP_INDEX_URL: ${PIP_INDEX_URL:-https://pypi.org/simple}
+x-web-build: &web_build
+  context: .
+  dockerfile: infra/web.Dockerfile
+  args:
+    NPM_REGISTRY: ${NPM_REGISTRY:-https://registry.npmjs.org}
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: jianspace
+      POSTGRES_USER: jianspace
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.docker}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U jianspace -d jianspace']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  redis:
+    image: redis:7.4-alpine
+    command: [redis-server, --appendonly, 'yes']
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  migrate:
+    build: *api_build
+    environment: &api_env
+      APP_ENV: ${APP_ENV:-development}
+      DATABASE_URL: postgresql+psycopg://jianspace:${POSTGRES_PASSWORD}@db:5432/jianspace
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      APP_ORIGINS: ${PUBLIC_URL:-http://127.0.0.1:8080}
+      PUBLIC_URL: ${PUBLIC_URL:-http://127.0.0.1:8080}
+      TASK_BACKEND: celery
+      REDIS_URL: redis://redis:6379/0
+      STORAGE_ROOT: /app/data/assets
+      STORAGE_BACKEND: ${STORAGE_BACKEND:-local}
+      S3_ENDPOINT_URL: ${S3_ENDPOINT_URL:-}
+      S3_BUCKET: ${S3_BUCKET:-}
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID:-}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY:-}
+      ALLOW_AI_CALLS: ${ALLOW_AI_CALLS:-false}
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+      DASHSCOPE_IMAGE_MODEL: ${DASHSCOPE_IMAGE_MODEL:-qwen-image-2.0-pro}
+      DASHSCOPE_IMAGE_FALLBACK_MODELS: ${DASHSCOPE_IMAGE_FALLBACK_MODELS:-}
+      DASHSCOPE_VISION_MODEL: ${DASHSCOPE_VISION_MODEL:-qwen3-vl-plus}
+      DASHSCOPE_API_BASE: ${DASHSCOPE_API_BASE:-https://dashscope.aliyuncs.com}
+      DASHSCOPE_TEXT_MODEL: ${DASHSCOPE_TEXT_MODEL:-}
+      WEATHER_ENABLED: ${WEATHER_ENABLED:-true}
+      WEATHER_DEFAULT_CITY: ${WEATHER_DEFAULT_CITY:-}
+      SUPPORT_EMAIL: ${SUPPORT_EMAIL:-}
+      AI_IMAGE_CREDITS: ${AI_IMAGE_CREDITS:-10}
+      AI_INPAINT_CREDITS: ${AI_INPAINT_CREDITS:-8}
+      AI_PLAN_CREDITS: ${AI_PLAN_CREDITS:-5}
+      AI_DAILY_LIMIT: ${AI_DAILY_LIMIT:-30}
+      AI_STRUCTURE_REVIEW_ENABLED: ${AI_STRUCTURE_REVIEW_ENABLED:-false}
+      ALLOW_SELF_REGISTER: ${ALLOW_SELF_REGISTER:-true}
+      REGISTRATION_CREDITS: ${REGISTRATION_CREDITS:-6}
+      FAMILY_TRIAL_CREDITS: ${FAMILY_TRIAL_CREDITS:-30}
+      FAMILY_TRIAL_DAYS: ${FAMILY_TRIAL_DAYS:-14}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+    depends_on: { db: { condition: service_healthy }, redis: { condition: service_healthy } }
+    command: [alembic, upgrade, head]
+  api:
+    build: *api_build
+    environment: *api_env
+    depends_on: { migrate: { condition: service_completed_successfully } }
+    volumes: [asset_data:/app/data/assets]
+    init: true
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    restart: unless-stopped
+  worker:
+    build: *api_build
+    environment: *api_env
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+    volumes: [asset_data:/app/data/assets]
+    init: true
+    command: [celery, -A, interior.celery_app:app, worker, --loglevel=info, --concurrency=2]
+    restart: unless-stopped
+  web:
+    build: *web_build
+    depends_on: { api: { condition: service_healthy } }
+    ports: ['127.0.0.1:8080:80']
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, http://127.0.0.1/]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    restart: unless-stopped
+volumes:
+  postgres_data:
+  redis_data:
+  asset_data:

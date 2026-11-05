@@ -1,0 +1,5470 @@
+{
+  "loft": {
+    "schemaVersion": "1.0",
+    "sceneId": "c06f9310-94e6-45e8-90ec-caef851eb43f",
+    "geometryVersionId": "05f6c188-5c07-444b-b17c-5f2ffd848730",
+    "unit": "mm",
+    "coordinateSystem": "RIGHT_HANDED_Z_UP",
+    "floors": [
+      {
+        "id": "level-1",
+        "name": "Loft 下层",
+        "elevationMm": 0,
+        "rooms": [
+          {
+            "id": "level-1-living",
+            "name": "挑空客厅",
+            "type": "living",
+            "heightMm": 5400,
+            "boundaryMm": [
+              [
+                100,
+                100
+              ],
+              [
+                7100,
+                100
+              ],
+              [
+                7100,
+                4100
+              ],
+              [
+                100,
+                4100
+              ]
+            ],
+            "computedAreaMm2": 28000000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-1",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-2",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-3",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-4",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-8",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-12",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-kitchen",
+            "name": "开放厨房",
+            "type": "kitchen",
+            "heightMm": 2600,
+            "boundaryMm": [
+              [
+                100,
+                4300
+              ],
+              [
+                2900,
+                4300
+              ],
+              [
+                2900,
+                9100
+              ],
+              [
+                100,
+                9100
+              ]
+            ],
+            "computedAreaMm2": 13440000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-2",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-5",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-9",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-10",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-bath",
+            "name": "卫生间",
+            "type": "bathroom",
+            "heightMm": 2600,
+            "boundaryMm": [
+              [
+                3100,
+                4300
+              ],
+              [
+                4700,
+                4300
+              ],
+              [
+                4700,
+                9100
+              ],
+              [
+                3100,
+                9100
+              ]
+            ],
+            "computedAreaMm2": 7680000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-3",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-6",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-10",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-11",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-hall",
+            "name": "楼梯厅",
+            "type": "hall",
+            "heightMm": 5400,
+            "boundaryMm": [
+              [
+                4900,
+                4300
+              ],
+              [
+                7100,
+                4300
+              ],
+              [
+                7100,
+                9100
+              ],
+              [
+                4900,
+                9100
+              ]
+            ],
+            "computedAreaMm2": 10560000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-4",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-7",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-11",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-13",
+                "side": "left"
+              }
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "id": "level-1-wall-1",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              7200,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-2",
+            "startMm": [
+              0,
+              4200
+            ],
+            "endMm": [
+              3000,
+              4200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-3",
+            "startMm": [
+              3000,
+              4200
+            ],
+            "endMm": [
+              4800,
+              4200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-4",
+            "startMm": [
+              4800,
+              4200
+            ],
+            "endMm": [
+              7200,
+              4200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-5",
+            "startMm": [
+              0,
+              9200
+            ],
+            "endMm": [
+              3000,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-6",
+            "startMm": [
+              3000,
+              9200
+            ],
+            "endMm": [
+              4800,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-7",
+            "startMm": [
+              4800,
+              9200
+            ],
+            "endMm": [
+              7200,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-8",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              0,
+              4200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-9",
+            "startMm": [
+              0,
+              4200
+            ],
+            "endMm": [
+              0,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-10",
+            "startMm": [
+              3000,
+              4200
+            ],
+            "endMm": [
+              3000,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-11",
+            "startMm": [
+              4800,
+              4200
+            ],
+            "endMm": [
+              4800,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-12",
+            "startMm": [
+              7200,
+              0
+            ],
+            "endMm": [
+              7200,
+              4200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-13",
+            "startMm": [
+              7200,
+              4200
+            ],
+            "endMm": [
+              7200,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 5400,
+            "structuralRole": "unknown",
+            "locked": true
+          }
+        ],
+        "openings": [
+          {
+            "id": "level-1-door-0",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-11",
+            "offsetMm": 2050,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-bath",
+              "level-1-hall"
+            ]
+          },
+          {
+            "id": "level-1-door-1",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-1-wall-4",
+            "offsetMm": 300,
+            "widthMm": 1800,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-living",
+              "level-1-hall"
+            ]
+          },
+          {
+            "id": "level-1-window-3",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-9",
+            "offsetMm": 1600,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-kitchen",
+              null
+            ]
+          },
+          {
+            "id": "level-1-window-4",
+            "kind": "window",
+            "model": "floor-to-ceiling",
+            "wallId": "level-1-wall-8",
+            "offsetMm": 500,
+            "widthMm": 3200,
+            "bottomMm": 100,
+            "heightMm": 2600,
+            "connects": [
+              "level-1-living",
+              null
+            ]
+          },
+          {
+            "id": "level-1-window-5",
+            "kind": "window",
+            "model": "floor-to-ceiling",
+            "wallId": "level-1-wall-12",
+            "offsetMm": 500,
+            "widthMm": 3200,
+            "bottomMm": 100,
+            "heightMm": 2600,
+            "connects": [
+              "level-1-living",
+              null
+            ]
+          },
+          {
+            "id": "level-1-door-6",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-2",
+            "offsetMm": 1050,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-living",
+              "level-1-kitchen"
+            ]
+          },
+          {
+            "id": "level-1-window-7",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-5",
+            "offsetMm": 600,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-kitchen",
+              null
+            ]
+          },
+          {
+            "id": "level-1-window-8",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-6",
+            "offsetMm": 300,
+            "widthMm": 1200,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-bath",
+              null
+            ]
+          },
+          {
+            "id": "level-1-entrance",
+            "kind": "door",
+            "wallId": "level-1-wall-1",
+            "offsetMm": 250,
+            "widthMm": 1000,
+            "bottomMm": 0,
+            "heightMm": 2100,
+            "connects": [
+              "level-1-living",
+              null
+            ]
+          }
+        ],
+        "obstacles": [],
+        "stairs": [
+          {
+            "id": "loft-stair",
+            "startMm": [
+              6000,
+              4300
+            ],
+            "endMm": [
+              6000,
+              8400
+            ],
+            "widthMm": 1000,
+            "targetFloorId": "level-2",
+            "stepCount": 16
+          }
+        ]
+      },
+      {
+        "id": "level-2",
+        "name": "Loft 夹层",
+        "elevationMm": 2800,
+        "rooms": [
+          {
+            "id": "level-2-bed",
+            "name": "夹层卧室",
+            "type": "bedroom",
+            "heightMm": 2600,
+            "boundaryMm": [
+              [
+                100,
+                4300
+              ],
+              [
+                4700,
+                4300
+              ],
+              [
+                4700,
+                9100
+              ],
+              [
+                100,
+                9100
+              ]
+            ],
+            "computedAreaMm2": 22080000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-1",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-3",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-5",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-6",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-7",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-landing",
+            "name": "夹层平台",
+            "type": "hall",
+            "heightMm": 2600,
+            "boundaryMm": [
+              [
+                4900,
+                8100
+              ],
+              [
+                7100,
+                8100
+              ],
+              [
+                7100,
+                9100
+              ],
+              [
+                4900,
+                9100
+              ]
+            ],
+            "computedAreaMm2": 2200000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-2",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-4",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-7",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-8",
+                "side": "left"
+              }
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "id": "level-2-wall-1",
+            "startMm": [
+              0,
+              4200
+            ],
+            "endMm": [
+              4800,
+              4200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 1050,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-2",
+            "startMm": [
+              4800,
+              8000
+            ],
+            "endMm": [
+              7200,
+              8000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-3",
+            "startMm": [
+              0,
+              9200
+            ],
+            "endMm": [
+              4800,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-4",
+            "startMm": [
+              4800,
+              9200
+            ],
+            "endMm": [
+              7200,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-5",
+            "startMm": [
+              0,
+              4200
+            ],
+            "endMm": [
+              0,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-6",
+            "startMm": [
+              4800,
+              4200
+            ],
+            "endMm": [
+              4800,
+              8000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-7",
+            "startMm": [
+              4800,
+              8000
+            ],
+            "endMm": [
+              4800,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-8",
+            "startMm": [
+              7200,
+              8000
+            ],
+            "endMm": [
+              7200,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2600,
+            "structuralRole": "unknown",
+            "locked": true
+          }
+        ],
+        "openings": [
+          {
+            "id": "level-2-door-0",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-7",
+            "offsetMm": 150,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-bed",
+              "level-2-landing"
+            ]
+          },
+          {
+            "id": "level-2-window-1",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-5",
+            "offsetMm": 1600,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bed",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-3",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-3",
+            "offsetMm": 1500,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bed",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-4",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-6",
+            "offsetMm": 1000,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bed",
+              null
+            ]
+          },
+          {
+            "id": "loft-arrival",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-2-wall-2",
+            "offsetMm": 700,
+            "widthMm": 1000,
+            "bottomMm": 0,
+            "heightMm": 2100,
+            "connects": [
+              "level-2-landing",
+              null
+            ]
+          }
+        ],
+        "obstacles": []
+      }
+    ],
+    "measurements": [],
+    "confirmation": {
+      "status": "draft",
+      "measurementRevision": 1
+    },
+    "layout": {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "name": "户型初始方案",
+      "styleId": "warm-wood",
+      "furniture": [
+        {
+          "id": "level-1-living-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-living",
+          "skuId": "level-1-living-sku-0",
+          "positionMm": [
+            3600,
+            3450,
+            0
+          ],
+          "sizeMm": [
+            1700,
+            800,
+            800
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-living-item-1",
+          "floorId": "level-1",
+          "roomId": "level-1-living",
+          "skuId": "level-1-living-sku-1",
+          "positionMm": [
+            3600,
+            2250,
+            0
+          ],
+          "sizeMm": [
+            1100,
+            600,
+            400
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-kitchen-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-kitchen",
+          "skuId": "level-1-kitchen-sku-0",
+          "positionMm": [
+            1500,
+            8550,
+            0
+          ],
+          "sizeMm": [
+            1200,
+            600,
+            850
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-bath-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-bath",
+          "skuId": "level-1-bath-sku-0",
+          "positionMm": [
+            3900,
+            8500,
+            0
+          ],
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-bed-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-bed",
+          "skuId": "level-2-bed-sku-0",
+          "positionMm": [
+            2400,
+            7850,
+            0
+          ],
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        }
+      ],
+      "materials": [],
+      "cameraViews": [],
+      "catalogSnapshot": [
+        {
+          "skuId": "level-1-living-sku-0",
+          "name": "小户型双人沙发",
+          "sizeMm": [
+            1700,
+            800,
+            800
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-sofa",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-living-sku-1",
+          "name": "原木长茶几",
+          "sizeMm": [
+            1100,
+            600,
+            400
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-coffee-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-kitchen-sku-0",
+          "name": "双门厨房地柜",
+          "sizeMm": [
+            1200,
+            600,
+            850
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-kitchen-cabinet",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-bath-sku-0",
+          "name": "一体坐便器",
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-toilet",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-bed-sku-0",
+          "name": "单人床",
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-bed",
+          "productUrl": null
+        }
+      ]
+    }
+  },
+  "duplex": {
+    "schemaVersion": "1.0",
+    "sceneId": "1021a13a-a7ac-4747-b327-0728a56d3efd",
+    "geometryVersionId": "02a13a44-1c8d-4217-a268-a6c2330f6b3e",
+    "unit": "mm",
+    "coordinateSystem": "RIGHT_HANDED_Z_UP",
+    "floors": [
+      {
+        "id": "level-1",
+        "name": "复式一层",
+        "elevationMm": 0,
+        "rooms": [
+          {
+            "id": "level-1-living",
+            "name": "客厅",
+            "type": "living",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                100,
+                100
+              ],
+              [
+                6100,
+                100
+              ],
+              [
+                6100,
+                4700
+              ],
+              [
+                100,
+                4700
+              ]
+            ],
+            "computedAreaMm2": 27600000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-1",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-3",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-4",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-9",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-12",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-dining",
+            "name": "餐厅",
+            "type": "dining",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                6300,
+                100
+              ],
+              [
+                9900,
+                100
+              ],
+              [
+                9900,
+                4700
+              ],
+              [
+                6300,
+                4700
+              ]
+            ],
+            "computedAreaMm2": 16560000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-2",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-5",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-12",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-15",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-kitchen",
+            "name": "厨房",
+            "type": "kitchen",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                100,
+                4900
+              ],
+              [
+                3400,
+                4900
+              ],
+              [
+                3400,
+                8900
+              ],
+              [
+                100,
+                8900
+              ]
+            ],
+            "computedAreaMm2": 13200000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-3",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-6",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-10",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-11",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-bath",
+            "name": "一层卫生间",
+            "type": "bathroom",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                3600,
+                4900
+              ],
+              [
+                6100,
+                4900
+              ],
+              [
+                6100,
+                8900
+              ],
+              [
+                3600,
+                8900
+              ]
+            ],
+            "computedAreaMm2": 10000000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-4",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-7",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-11",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-13",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-hall",
+            "name": "楼梯厅",
+            "type": "hall",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                6300,
+                4900
+              ],
+              [
+                9900,
+                4900
+              ],
+              [
+                9900,
+                10400
+              ],
+              [
+                6300,
+                10400
+              ]
+            ],
+            "computedAreaMm2": 19800000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-5",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-8",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-13",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-14",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-16",
+                "side": "left"
+              }
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "id": "level-1-wall-1",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              6200,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-2",
+            "startMm": [
+              6200,
+              0
+            ],
+            "endMm": [
+              10000,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-3",
+            "startMm": [
+              0,
+              4800
+            ],
+            "endMm": [
+              3500,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-4",
+            "startMm": [
+              3500,
+              4800
+            ],
+            "endMm": [
+              6200,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-5",
+            "startMm": [
+              6200,
+              4800
+            ],
+            "endMm": [
+              10000,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-6",
+            "startMm": [
+              0,
+              9000
+            ],
+            "endMm": [
+              3500,
+              9000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-7",
+            "startMm": [
+              3500,
+              9000
+            ],
+            "endMm": [
+              6200,
+              9000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-8",
+            "startMm": [
+              6200,
+              10500
+            ],
+            "endMm": [
+              10000,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-9",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              0,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-10",
+            "startMm": [
+              0,
+              4800
+            ],
+            "endMm": [
+              0,
+              9000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-11",
+            "startMm": [
+              3500,
+              4800
+            ],
+            "endMm": [
+              3500,
+              9000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-12",
+            "startMm": [
+              6200,
+              0
+            ],
+            "endMm": [
+              6200,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-13",
+            "startMm": [
+              6200,
+              4800
+            ],
+            "endMm": [
+              6200,
+              9000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-14",
+            "startMm": [
+              6200,
+              9000
+            ],
+            "endMm": [
+              6200,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-15",
+            "startMm": [
+              10000,
+              0
+            ],
+            "endMm": [
+              10000,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-16",
+            "startMm": [
+              10000,
+              4800
+            ],
+            "endMm": [
+              10000,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          }
+        ],
+        "openings": [
+          {
+            "id": "level-1-door-0",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-13",
+            "offsetMm": 1650,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-bath",
+              "level-1-hall"
+            ]
+          },
+          {
+            "id": "level-1-door-1",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-1-wall-5",
+            "offsetMm": 1000,
+            "widthMm": 1800,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-dining",
+              "level-1-hall"
+            ]
+          },
+          {
+            "id": "level-1-window-3",
+            "kind": "window",
+            "model": "floor-to-ceiling",
+            "wallId": "level-1-wall-9",
+            "offsetMm": 800,
+            "widthMm": 3200,
+            "bottomMm": 100,
+            "heightMm": 2550,
+            "connects": [
+              "level-1-living",
+              null
+            ]
+          },
+          {
+            "id": "level-1-door-4",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-1-wall-12",
+            "offsetMm": 1500,
+            "widthMm": 1800,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-living",
+              "level-1-dining"
+            ]
+          },
+          {
+            "id": "level-1-window-5",
+            "kind": "window",
+            "model": "floor-to-ceiling",
+            "wallId": "level-1-wall-15",
+            "offsetMm": 800,
+            "widthMm": 3200,
+            "bottomMm": 100,
+            "heightMm": 2550,
+            "connects": [
+              "level-1-dining",
+              null
+            ]
+          },
+          {
+            "id": "level-1-window-6",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-10",
+            "offsetMm": 1200,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-kitchen",
+              null
+            ]
+          },
+          {
+            "id": "level-1-window-7",
+            "kind": "window",
+            "model": "floor-to-ceiling",
+            "wallId": "level-1-wall-2",
+            "offsetMm": 300,
+            "widthMm": 3200,
+            "bottomMm": 100,
+            "heightMm": 2550,
+            "connects": [
+              "level-1-dining",
+              null
+            ]
+          },
+          {
+            "id": "level-1-door-8",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-3",
+            "offsetMm": 1300,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-living",
+              "level-1-kitchen"
+            ]
+          },
+          {
+            "id": "level-1-window-9",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-6",
+            "offsetMm": 850,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-kitchen",
+              null
+            ]
+          },
+          {
+            "id": "level-1-window-10",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-7",
+            "offsetMm": 450,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-bath",
+              null
+            ]
+          },
+          {
+            "id": "level-1-entrance",
+            "kind": "door",
+            "wallId": "level-1-wall-1",
+            "offsetMm": 250,
+            "widthMm": 1000,
+            "bottomMm": 0,
+            "heightMm": 2100,
+            "connects": [
+              "level-1-living",
+              null
+            ]
+          }
+        ],
+        "obstacles": [],
+        "stairs": [
+          {
+            "id": "duplex-stair",
+            "startMm": [
+              8700,
+              5200
+            ],
+            "endMm": [
+              8700,
+              9700
+            ],
+            "widthMm": 1100,
+            "targetFloorId": "level-2",
+            "stepCount": 18
+          }
+        ]
+      },
+      {
+        "id": "level-2",
+        "name": "复式二层",
+        "elevationMm": 3000,
+        "rooms": [
+          {
+            "id": "level-2-master",
+            "name": "主卧",
+            "type": "bedroom",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                100,
+                100
+              ],
+              [
+                4900,
+                100
+              ],
+              [
+                4900,
+                4400
+              ],
+              [
+                100,
+                4400
+              ]
+            ],
+            "computedAreaMm2": 20640000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-1",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-3",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-4",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-14",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-18",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-bed",
+            "name": "次卧",
+            "type": "bedroom",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                5100,
+                100
+              ],
+              [
+                9900,
+                100
+              ],
+              [
+                9900,
+                4400
+              ],
+              [
+                5100,
+                4400
+              ]
+            ],
+            "computedAreaMm2": 20640000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-2",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-5",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-18",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-22",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-study",
+            "name": "书房",
+            "type": "study",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                100,
+                4600
+              ],
+              [
+                3400,
+                4600
+              ],
+              [
+                3400,
+                10400
+              ],
+              [
+                100,
+                10400
+              ]
+            ],
+            "computedAreaMm2": 19140000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-3",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-11",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-15",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-16",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-17",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-corridor",
+            "name": "二层过厅",
+            "type": "hall",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                3600,
+                4600
+              ],
+              [
+                9900,
+                4600
+              ],
+              [
+                9900,
+                5900
+              ],
+              [
+                3600,
+                5900
+              ]
+            ],
+            "computedAreaMm2": 8190000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-4",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-5",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-6",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-7",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-8",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-16",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-23",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-bath",
+            "name": "二层卫生间",
+            "type": "bathroom",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                3600,
+                6100
+              ],
+              [
+                6100,
+                6100
+              ],
+              [
+                6100,
+                10400
+              ],
+              [
+                3600,
+                10400
+              ]
+            ],
+            "computedAreaMm2": 10750000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-6",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-12",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-17",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-19",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-20",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-passage",
+            "name": "侧廊",
+            "type": "hall",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                6300,
+                6100
+              ],
+              [
+                7600,
+                6100
+              ],
+              [
+                7600,
+                9100
+              ],
+              [
+                6300,
+                9100
+              ]
+            ],
+            "computedAreaMm2": 3900000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-7",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-9",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-19",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-21",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-void",
+            "name": "楼梯井（挑空）",
+            "type": "stairwell",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                7800,
+                6100
+              ],
+              [
+                9900,
+                6100
+              ],
+              [
+                9900,
+                9100
+              ],
+              [
+                7800,
+                9100
+              ]
+            ],
+            "computedAreaMm2": 6300000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-8",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-10",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-21",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-24",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-hall",
+            "name": "二层走廊",
+            "type": "hall",
+            "heightMm": 2800,
+            "boundaryMm": [
+              [
+                6300,
+                9300
+              ],
+              [
+                9900,
+                9300
+              ],
+              [
+                9900,
+                10400
+              ],
+              [
+                6300,
+                10400
+              ]
+            ],
+            "computedAreaMm2": 3960000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-9",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-10",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-13",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-20",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-25",
+                "side": "left"
+              }
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "id": "level-2-wall-1",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              5000,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-2",
+            "startMm": [
+              5000,
+              0
+            ],
+            "endMm": [
+              10000,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-3",
+            "startMm": [
+              0,
+              4500
+            ],
+            "endMm": [
+              3500,
+              4500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-4",
+            "startMm": [
+              3500,
+              4500
+            ],
+            "endMm": [
+              5000,
+              4500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-5",
+            "startMm": [
+              5000,
+              4500
+            ],
+            "endMm": [
+              10000,
+              4500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-6",
+            "startMm": [
+              3500,
+              6000
+            ],
+            "endMm": [
+              6200,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-7",
+            "startMm": [
+              6200,
+              6000
+            ],
+            "endMm": [
+              7700,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-8",
+            "startMm": [
+              7700,
+              6000
+            ],
+            "endMm": [
+              10000,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-9",
+            "startMm": [
+              6200,
+              9200
+            ],
+            "endMm": [
+              7700,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-10",
+            "startMm": [
+              7700,
+              9200
+            ],
+            "endMm": [
+              10000,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-11",
+            "startMm": [
+              0,
+              10500
+            ],
+            "endMm": [
+              3500,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-12",
+            "startMm": [
+              3500,
+              10500
+            ],
+            "endMm": [
+              6200,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-13",
+            "startMm": [
+              6200,
+              10500
+            ],
+            "endMm": [
+              10000,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-14",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              0,
+              4500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-15",
+            "startMm": [
+              0,
+              4500
+            ],
+            "endMm": [
+              0,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-16",
+            "startMm": [
+              3500,
+              4500
+            ],
+            "endMm": [
+              3500,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-17",
+            "startMm": [
+              3500,
+              6000
+            ],
+            "endMm": [
+              3500,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-18",
+            "startMm": [
+              5000,
+              0
+            ],
+            "endMm": [
+              5000,
+              4500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-19",
+            "startMm": [
+              6200,
+              6000
+            ],
+            "endMm": [
+              6200,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-20",
+            "startMm": [
+              6200,
+              9200
+            ],
+            "endMm": [
+              6200,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-21",
+            "startMm": [
+              7700,
+              6000
+            ],
+            "endMm": [
+              7700,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-22",
+            "startMm": [
+              10000,
+              0
+            ],
+            "endMm": [
+              10000,
+              4500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-23",
+            "startMm": [
+              10000,
+              4500
+            ],
+            "endMm": [
+              10000,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-24",
+            "startMm": [
+              10000,
+              6000
+            ],
+            "endMm": [
+              10000,
+              9200
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-25",
+            "startMm": [
+              10000,
+              9200
+            ],
+            "endMm": [
+              10000,
+              10500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 2800,
+            "structuralRole": "unknown",
+            "locked": true
+          }
+        ],
+        "openings": [
+          {
+            "id": "level-2-door-0",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-5",
+            "offsetMm": 2050,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-bed",
+              "level-2-corridor"
+            ]
+          },
+          {
+            "id": "level-2-door-1",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-19",
+            "offsetMm": 1150,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-bath",
+              "level-2-passage"
+            ]
+          },
+          {
+            "id": "level-2-door-2",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-4",
+            "offsetMm": 300,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-master",
+              "level-2-corridor"
+            ]
+          },
+          {
+            "id": "level-2-door-3",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-2-wall-7",
+            "offsetMm": 150,
+            "widthMm": 1200,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-corridor",
+              "level-2-passage"
+            ]
+          },
+          {
+            "id": "level-2-door-4",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-2-wall-9",
+            "offsetMm": 150,
+            "widthMm": 1200,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-passage",
+              "level-2-hall"
+            ]
+          },
+          {
+            "id": "level-2-door-5",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-16",
+            "offsetMm": 300,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-study",
+              "level-2-corridor"
+            ]
+          },
+          {
+            "id": "level-2-window-6",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-15",
+            "offsetMm": 2100,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-study",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-7",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-1",
+            "offsetMm": 1600,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-master",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-8",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-2",
+            "offsetMm": 1600,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bed",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-9",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-14",
+            "offsetMm": 1350,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-master",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-10",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-22",
+            "offsetMm": 1350,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bed",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-11",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-11",
+            "offsetMm": 850,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-study",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-12",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-12",
+            "offsetMm": 450,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bath",
+              null
+            ]
+          },
+          {
+            "id": "duplex-arrival",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-2-wall-10",
+            "offsetMm": 450,
+            "widthMm": 1100,
+            "bottomMm": 0,
+            "heightMm": 2100,
+            "connects": [
+              "level-2-hall",
+              "level-2-void"
+            ]
+          }
+        ],
+        "obstacles": []
+      }
+    ],
+    "measurements": [],
+    "confirmation": {
+      "status": "draft",
+      "measurementRevision": 1
+    },
+    "layout": {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "name": "户型初始方案",
+      "styleId": "warm-wood",
+      "furniture": [
+        {
+          "id": "level-1-living-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-living",
+          "skuId": "level-1-living-sku-0",
+          "positionMm": [
+            3100,
+            4050,
+            0
+          ],
+          "sizeMm": [
+            1700,
+            800,
+            800
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-living-item-1",
+          "floorId": "level-1",
+          "roomId": "level-1-living",
+          "skuId": "level-1-living-sku-1",
+          "positionMm": [
+            3100,
+            2850,
+            0
+          ],
+          "sizeMm": [
+            1100,
+            600,
+            400
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-dining-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-dining",
+          "skuId": "level-1-dining-sku-0",
+          "positionMm": [
+            8100,
+            4050,
+            0
+          ],
+          "sizeMm": [
+            1400,
+            800,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-kitchen-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-kitchen",
+          "skuId": "level-1-kitchen-sku-0",
+          "positionMm": [
+            1750,
+            8350,
+            0
+          ],
+          "sizeMm": [
+            1200,
+            600,
+            850
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-bath-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-bath",
+          "skuId": "level-1-bath-sku-0",
+          "positionMm": [
+            4850,
+            8300,
+            0
+          ],
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-master-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-master",
+          "skuId": "level-2-master-sku-0",
+          "positionMm": [
+            2500,
+            3150,
+            0
+          ],
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-bed-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-bed",
+          "skuId": "level-2-bed-sku-0",
+          "positionMm": [
+            7500,
+            3150,
+            0
+          ],
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-study-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-study",
+          "skuId": "level-2-study-sku-0",
+          "positionMm": [
+            1750,
+            9850,
+            0
+          ],
+          "sizeMm": [
+            1200,
+            600,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-bath-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-bath",
+          "skuId": "level-2-bath-sku-0",
+          "positionMm": [
+            4850,
+            9800,
+            0
+          ],
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        }
+      ],
+      "materials": [],
+      "cameraViews": [],
+      "catalogSnapshot": [
+        {
+          "skuId": "level-1-living-sku-0",
+          "name": "小户型双人沙发",
+          "sizeMm": [
+            1700,
+            800,
+            800
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-sofa",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-living-sku-1",
+          "name": "原木长茶几",
+          "sizeMm": [
+            1100,
+            600,
+            400
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-coffee-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-dining-sku-0",
+          "name": "四人餐桌",
+          "sizeMm": [
+            1400,
+            800,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-kitchen-sku-0",
+          "name": "双门厨房地柜",
+          "sizeMm": [
+            1200,
+            600,
+            850
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-kitchen-cabinet",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-bath-sku-0",
+          "name": "一体坐便器",
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-toilet",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-master-sku-0",
+          "name": "单人床",
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-bed",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-bed-sku-0",
+          "name": "单人床",
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-bed",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-study-sku-0",
+          "name": "居家办公桌",
+          "sizeMm": [
+            1200,
+            600,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-bath-sku-0",
+          "name": "一体坐便器",
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-toilet",
+          "productUrl": null
+        }
+      ]
+    }
+  },
+  "villa": {
+    "schemaVersion": "1.0",
+    "sceneId": "a1a8a54a-09a3-493b-803b-3a37f997796c",
+    "geometryVersionId": "4130f729-4ff5-401c-b611-c65c5ce26174",
+    "unit": "mm",
+    "coordinateSystem": "RIGHT_HANDED_Z_UP",
+    "floors": [
+      {
+        "id": "level-1",
+        "name": "庭院一层",
+        "elevationMm": 0,
+        "rooms": [
+          {
+            "id": "level-1-living",
+            "name": "起居厅",
+            "type": "living",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                100,
+                100
+              ],
+              [
+                7400,
+                100
+              ],
+              [
+                7400,
+                5900
+              ],
+              [
+                100,
+                5900
+              ]
+            ],
+            "computedAreaMm2": 42340000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-2",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-7",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-8",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-15",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-18",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-19",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-kitchen",
+            "name": "厨房",
+            "type": "kitchen",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                7600,
+                100
+              ],
+              [
+                11400,
+                100
+              ],
+              [
+                11400,
+                3900
+              ],
+              [
+                7600,
+                3900
+              ]
+            ],
+            "computedAreaMm2": 14440000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-3",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-5",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-18",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-22",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-bath",
+            "name": "一层卫生间",
+            "type": "bathroom",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                11600,
+                100
+              ],
+              [
+                13900,
+                100
+              ],
+              [
+                13900,
+                3900
+              ],
+              [
+                11600,
+                3900
+              ]
+            ],
+            "computedAreaMm2": 8740000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-4",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-6",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-22",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-24",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-dining",
+            "name": "餐厅",
+            "type": "dining",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                7600,
+                4100
+              ],
+              [
+                13900,
+                4100
+              ],
+              [
+                13900,
+                5900
+              ],
+              [
+                7600,
+                5900
+              ]
+            ],
+            "computedAreaMm2": 11340000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-5",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-6",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-9",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-10",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-19",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-25",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-bed",
+            "name": "客卧",
+            "type": "bedroom",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                100,
+                6100
+              ],
+              [
+                4400,
+                6100
+              ],
+              [
+                4400,
+                11900
+              ],
+              [
+                100,
+                11900
+              ]
+            ],
+            "computedAreaMm2": 24940000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-7",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-11",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-16",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-17",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-study",
+            "name": "书房",
+            "type": "study",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                4600,
+                6100
+              ],
+              [
+                8900,
+                6100
+              ],
+              [
+                8900,
+                11900
+              ],
+              [
+                4600,
+                11900
+              ]
+            ],
+            "computedAreaMm2": 24940000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-8",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-9",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-12",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-17",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-20",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-hall",
+            "name": "楼梯厅",
+            "type": "hall",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                9100,
+                6100
+              ],
+              [
+                13900,
+                6100
+              ],
+              [
+                13900,
+                12900
+              ],
+              [
+                9100,
+                12900
+              ]
+            ],
+            "computedAreaMm2": 32640000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-10",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-13",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-20",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-21",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-26",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-1-yard",
+            "name": "前庭小院",
+            "type": "courtyard",
+            "heightMm": 3200,
+            "boundaryMm": [
+              [
+                100,
+                -4900
+              ],
+              [
+                13900,
+                -4900
+              ],
+              [
+                13900,
+                -100
+              ],
+              [
+                100,
+                -100
+              ]
+            ],
+            "computedAreaMm2": 66240000,
+            "wallRefs": [
+              {
+                "wallId": "level-1-wall-1",
+                "side": "left"
+              },
+              {
+                "wallId": "level-1-wall-2",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-3",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-4",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-14",
+                "side": "right"
+              },
+              {
+                "wallId": "level-1-wall-23",
+                "side": "left"
+              }
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "id": "level-1-wall-1",
+            "startMm": [
+              0,
+              -5000
+            ],
+            "endMm": [
+              14000,
+              -5000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 900,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-2",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              7500,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-3",
+            "startMm": [
+              7500,
+              0
+            ],
+            "endMm": [
+              11500,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-4",
+            "startMm": [
+              11500,
+              0
+            ],
+            "endMm": [
+              14000,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-5",
+            "startMm": [
+              7500,
+              4000
+            ],
+            "endMm": [
+              11500,
+              4000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-6",
+            "startMm": [
+              11500,
+              4000
+            ],
+            "endMm": [
+              14000,
+              4000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-7",
+            "startMm": [
+              0,
+              6000
+            ],
+            "endMm": [
+              4500,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-8",
+            "startMm": [
+              4500,
+              6000
+            ],
+            "endMm": [
+              7500,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-9",
+            "startMm": [
+              7500,
+              6000
+            ],
+            "endMm": [
+              9000,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-10",
+            "startMm": [
+              9000,
+              6000
+            ],
+            "endMm": [
+              14000,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-11",
+            "startMm": [
+              0,
+              12000
+            ],
+            "endMm": [
+              4500,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-12",
+            "startMm": [
+              4500,
+              12000
+            ],
+            "endMm": [
+              9000,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-13",
+            "startMm": [
+              9000,
+              13000
+            ],
+            "endMm": [
+              14000,
+              13000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-14",
+            "startMm": [
+              0,
+              -5000
+            ],
+            "endMm": [
+              0,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 900,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-15",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              0,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-16",
+            "startMm": [
+              0,
+              6000
+            ],
+            "endMm": [
+              0,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-17",
+            "startMm": [
+              4500,
+              6000
+            ],
+            "endMm": [
+              4500,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-18",
+            "startMm": [
+              7500,
+              0
+            ],
+            "endMm": [
+              7500,
+              4000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-19",
+            "startMm": [
+              7500,
+              4000
+            ],
+            "endMm": [
+              7500,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-20",
+            "startMm": [
+              9000,
+              6000
+            ],
+            "endMm": [
+              9000,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-21",
+            "startMm": [
+              9000,
+              12000
+            ],
+            "endMm": [
+              9000,
+              13000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-22",
+            "startMm": [
+              11500,
+              0
+            ],
+            "endMm": [
+              11500,
+              4000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-23",
+            "startMm": [
+              14000,
+              -5000
+            ],
+            "endMm": [
+              14000,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 900,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-24",
+            "startMm": [
+              14000,
+              0
+            ],
+            "endMm": [
+              14000,
+              4000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-25",
+            "startMm": [
+              14000,
+              4000
+            ],
+            "endMm": [
+              14000,
+              6000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-1-wall-26",
+            "startMm": [
+              14000,
+              6000
+            ],
+            "endMm": [
+              14000,
+              13000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3200,
+            "structuralRole": "unknown",
+            "locked": true
+          }
+        ],
+        "openings": [
+          {
+            "id": "level-1-door-0",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-20",
+            "offsetMm": 2550,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-study",
+              "level-1-hall"
+            ]
+          },
+          {
+            "id": "level-1-door-1",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-1-wall-10",
+            "offsetMm": 1600,
+            "widthMm": 1800,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-dining",
+              "level-1-hall"
+            ]
+          },
+          {
+            "id": "level-1-door-2",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-1-wall-2",
+            "offsetMm": 2850,
+            "widthMm": 1800,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-living",
+              "level-1-yard"
+            ]
+          },
+          {
+            "id": "level-1-window-4",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-16",
+            "offsetMm": 2100,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-bed",
+              null
+            ]
+          },
+          {
+            "id": "level-1-door-5",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-7",
+            "offsetMm": 1800,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-living",
+              "level-1-bed"
+            ]
+          },
+          {
+            "id": "level-1-window-6",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-11",
+            "offsetMm": 1350,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-bed",
+              null
+            ]
+          },
+          {
+            "id": "level-1-window-7",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-12",
+            "offsetMm": 1350,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-study",
+              null
+            ]
+          },
+          {
+            "id": "level-1-door-8",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-3",
+            "offsetMm": 1550,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-kitchen",
+              "level-1-yard"
+            ]
+          },
+          {
+            "id": "level-1-window-9",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-1-wall-24",
+            "offsetMm": 1100,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-1-bath",
+              null
+            ]
+          },
+          {
+            "id": "level-1-door-10",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-1-wall-4",
+            "offsetMm": 800,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-bath",
+              "level-1-yard"
+            ]
+          },
+          {
+            "id": "level-1-door-11",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-1-wall-19",
+            "offsetMm": 150,
+            "widthMm": 1700,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-1-living",
+              "level-1-dining"
+            ]
+          },
+          {
+            "id": "level-1-window-12",
+            "kind": "window",
+            "model": "floor-to-ceiling",
+            "wallId": "level-1-wall-25",
+            "offsetMm": 300,
+            "widthMm": 1400,
+            "bottomMm": 100,
+            "heightMm": 2600,
+            "connects": [
+              "level-1-dining",
+              null
+            ]
+          },
+          {
+            "id": "level-1-entrance",
+            "kind": "door",
+            "wallId": "level-1-wall-15",
+            "offsetMm": 250,
+            "widthMm": 1000,
+            "bottomMm": 0,
+            "heightMm": 2100,
+            "connects": [
+              "level-1-living",
+              null
+            ]
+          }
+        ],
+        "obstacles": [
+          {
+            "id": "yard-planter-0",
+            "kind": "planter",
+            "polygonMm": [
+              [
+                550,
+                -4400
+              ],
+              [
+                1250,
+                -4400
+              ],
+              [
+                1250,
+                -3700
+              ],
+              [
+                550,
+                -3700
+              ]
+            ],
+            "baseZMm": 0,
+            "heightMm": 550,
+            "locked": true
+          },
+          {
+            "id": "yard-planter-1",
+            "kind": "planter",
+            "polygonMm": [
+              [
+                12650,
+                -4400
+              ],
+              [
+                13350,
+                -4400
+              ],
+              [
+                13350,
+                -3700
+              ],
+              [
+                12650,
+                -3700
+              ]
+            ],
+            "baseZMm": 0,
+            "heightMm": 550,
+            "locked": true
+          }
+        ],
+        "stairs": [
+          {
+            "id": "villa-stair",
+            "startMm": [
+              12600,
+              6650
+            ],
+            "endMm": [
+              12600,
+              11800
+            ],
+            "widthMm": 1200,
+            "targetFloorId": "level-2",
+            "stepCount": 20
+          }
+        ]
+      },
+      {
+        "id": "level-2",
+        "name": "别墅二层",
+        "elevationMm": 3400,
+        "rooms": [
+          {
+            "id": "level-2-master",
+            "name": "主卧",
+            "type": "bedroom",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                100,
+                100
+              ],
+              [
+                6400,
+                100
+              ],
+              [
+                6400,
+                4700
+              ],
+              [
+                100,
+                4700
+              ]
+            ],
+            "computedAreaMm2": 28980000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-1",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-4",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-16",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-20",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-bed",
+            "name": "次卧",
+            "type": "bedroom",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                6600,
+                100
+              ],
+              [
+                10400,
+                100
+              ],
+              [
+                10400,
+                4700
+              ],
+              [
+                6600,
+                4700
+              ]
+            ],
+            "computedAreaMm2": 17480000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-2",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-5",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-20",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-24",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-bath",
+            "name": "二层卫生间",
+            "type": "bathroom",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                10600,
+                100
+              ],
+              [
+                13900,
+                100
+              ],
+              [
+                13900,
+                4700
+              ],
+              [
+                10600,
+                4700
+              ]
+            ],
+            "computedAreaMm2": 15180000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-3",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-6",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-24",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-26",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-corridor",
+            "name": "二层过厅",
+            "type": "hall",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                100,
+                4900
+              ],
+              [
+                13900,
+                4900
+              ],
+              [
+                13900,
+                6400
+              ],
+              [
+                100,
+                6400
+              ]
+            ],
+            "computedAreaMm2": 20700000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-4",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-5",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-6",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-7",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-8",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-9",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-10",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-17",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-27",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-study",
+            "name": "家庭活动室",
+            "type": "study",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                100,
+                6600
+              ],
+              [
+                5400,
+                6600
+              ],
+              [
+                5400,
+                11900
+              ],
+              [
+                100,
+                11900
+              ]
+            ],
+            "computedAreaMm2": 28090000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-7",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-13",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-18",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-19",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-child",
+            "name": "儿童房",
+            "type": "bedroom",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                5600,
+                6600
+              ],
+              [
+                9400,
+                6600
+              ],
+              [
+                9400,
+                11900
+              ],
+              [
+                5600,
+                11900
+              ]
+            ],
+            "computedAreaMm2": 20140000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-8",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-14",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-19",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-21",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-22",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-side",
+            "name": "楼梯侧廊",
+            "type": "hall",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                9600,
+                6600
+              ],
+              [
+                11200,
+                6600
+              ],
+              [
+                11200,
+                10700
+              ],
+              [
+                9600,
+                10700
+              ]
+            ],
+            "computedAreaMm2": 6560000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-9",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-11",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-21",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-25",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-void",
+            "name": "楼梯井（挑空）",
+            "type": "stairwell",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                11400,
+                6600
+              ],
+              [
+                13900,
+                6600
+              ],
+              [
+                13900,
+                10700
+              ],
+              [
+                11400,
+                10700
+              ]
+            ],
+            "computedAreaMm2": 10250000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-10",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-12",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-25",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-28",
+                "side": "left"
+              }
+            ]
+          },
+          {
+            "id": "level-2-landing",
+            "name": "二层平台",
+            "type": "hall",
+            "heightMm": 3000,
+            "boundaryMm": [
+              [
+                9600,
+                10900
+              ],
+              [
+                13900,
+                10900
+              ],
+              [
+                13900,
+                12900
+              ],
+              [
+                9600,
+                12900
+              ]
+            ],
+            "computedAreaMm2": 8600000,
+            "wallRefs": [
+              {
+                "wallId": "level-2-wall-11",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-12",
+                "side": "left"
+              },
+              {
+                "wallId": "level-2-wall-15",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-22",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-23",
+                "side": "right"
+              },
+              {
+                "wallId": "level-2-wall-29",
+                "side": "left"
+              }
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "id": "level-2-wall-1",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              6500,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-2",
+            "startMm": [
+              6500,
+              0
+            ],
+            "endMm": [
+              10500,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-3",
+            "startMm": [
+              10500,
+              0
+            ],
+            "endMm": [
+              14000,
+              0
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-4",
+            "startMm": [
+              0,
+              4800
+            ],
+            "endMm": [
+              6500,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-5",
+            "startMm": [
+              6500,
+              4800
+            ],
+            "endMm": [
+              10500,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-6",
+            "startMm": [
+              10500,
+              4800
+            ],
+            "endMm": [
+              14000,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-7",
+            "startMm": [
+              0,
+              6500
+            ],
+            "endMm": [
+              5500,
+              6500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-8",
+            "startMm": [
+              5500,
+              6500
+            ],
+            "endMm": [
+              9500,
+              6500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-9",
+            "startMm": [
+              9500,
+              6500
+            ],
+            "endMm": [
+              11300,
+              6500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-10",
+            "startMm": [
+              11300,
+              6500
+            ],
+            "endMm": [
+              14000,
+              6500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-11",
+            "startMm": [
+              9500,
+              10800
+            ],
+            "endMm": [
+              11300,
+              10800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-12",
+            "startMm": [
+              11300,
+              10800
+            ],
+            "endMm": [
+              14000,
+              10800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-13",
+            "startMm": [
+              0,
+              12000
+            ],
+            "endMm": [
+              5500,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-14",
+            "startMm": [
+              5500,
+              12000
+            ],
+            "endMm": [
+              9500,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-15",
+            "startMm": [
+              9500,
+              13000
+            ],
+            "endMm": [
+              14000,
+              13000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-16",
+            "startMm": [
+              0,
+              0
+            ],
+            "endMm": [
+              0,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-17",
+            "startMm": [
+              0,
+              4800
+            ],
+            "endMm": [
+              0,
+              6500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-18",
+            "startMm": [
+              0,
+              6500
+            ],
+            "endMm": [
+              0,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-19",
+            "startMm": [
+              5500,
+              6500
+            ],
+            "endMm": [
+              5500,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-20",
+            "startMm": [
+              6500,
+              0
+            ],
+            "endMm": [
+              6500,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-21",
+            "startMm": [
+              9500,
+              6500
+            ],
+            "endMm": [
+              9500,
+              10800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-22",
+            "startMm": [
+              9500,
+              10800
+            ],
+            "endMm": [
+              9500,
+              12000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-23",
+            "startMm": [
+              9500,
+              12000
+            ],
+            "endMm": [
+              9500,
+              13000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-24",
+            "startMm": [
+              10500,
+              0
+            ],
+            "endMm": [
+              10500,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-25",
+            "startMm": [
+              11300,
+              6500
+            ],
+            "endMm": [
+              11300,
+              10800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-26",
+            "startMm": [
+              14000,
+              0
+            ],
+            "endMm": [
+              14000,
+              4800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-27",
+            "startMm": [
+              14000,
+              4800
+            ],
+            "endMm": [
+              14000,
+              6500
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-28",
+            "startMm": [
+              14000,
+              6500
+            ],
+            "endMm": [
+              14000,
+              10800
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          },
+          {
+            "id": "level-2-wall-29",
+            "startMm": [
+              14000,
+              10800
+            ],
+            "endMm": [
+              14000,
+              13000
+            ],
+            "thicknessMm": 200,
+            "heightMm": 3000,
+            "structuralRole": "unknown",
+            "locked": true
+          }
+        ],
+        "openings": [
+          {
+            "id": "level-2-door-0",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-4",
+            "offsetMm": 2800,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-master",
+              "level-2-corridor"
+            ]
+          },
+          {
+            "id": "level-2-door-1",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-7",
+            "offsetMm": 2300,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-corridor",
+              "level-2-study"
+            ]
+          },
+          {
+            "id": "level-2-door-2",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-21",
+            "offsetMm": 1700,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-child",
+              "level-2-side"
+            ]
+          },
+          {
+            "id": "level-2-door-3",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-5",
+            "offsetMm": 1550,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-bed",
+              "level-2-corridor"
+            ]
+          },
+          {
+            "id": "level-2-door-4",
+            "kind": "door",
+            "model": "hinged",
+            "wallId": "level-2-wall-6",
+            "offsetMm": 1300,
+            "widthMm": 900,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-bath",
+              "level-2-corridor"
+            ]
+          },
+          {
+            "id": "level-2-door-5",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-2-wall-9",
+            "offsetMm": 150,
+            "widthMm": 1500,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-corridor",
+              "level-2-side"
+            ]
+          },
+          {
+            "id": "level-2-door-6",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-2-wall-11",
+            "offsetMm": 150,
+            "widthMm": 1500,
+            "bottomMm": 0,
+            "heightMm": 2200,
+            "connects": [
+              "level-2-side",
+              "level-2-landing"
+            ]
+          },
+          {
+            "id": "level-2-window-7",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-1",
+            "offsetMm": 2350,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-master",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-8",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-13",
+            "offsetMm": 1850,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-study",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-9",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-18",
+            "offsetMm": 1850,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-study",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-10",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-16",
+            "offsetMm": 1500,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-master",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-11",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-26",
+            "offsetMm": 1500,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bath",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-12",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-2",
+            "offsetMm": 1100,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bed",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-13",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-14",
+            "offsetMm": 1100,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-child",
+              null
+            ]
+          },
+          {
+            "id": "level-2-window-14",
+            "kind": "window",
+            "model": "casement",
+            "wallId": "level-2-wall-3",
+            "offsetMm": 850,
+            "widthMm": 1800,
+            "bottomMm": 900,
+            "heightMm": 1400,
+            "connects": [
+              "level-2-bath",
+              null
+            ]
+          },
+          {
+            "id": "villa-arrival",
+            "kind": "door",
+            "model": "archway",
+            "wallId": "level-2-wall-12",
+            "offsetMm": 700,
+            "widthMm": 1200,
+            "bottomMm": 0,
+            "heightMm": 2400,
+            "connects": [
+              "level-2-landing",
+              "level-2-void"
+            ]
+          }
+        ],
+        "obstacles": []
+      }
+    ],
+    "measurements": [],
+    "confirmation": {
+      "status": "draft",
+      "measurementRevision": 1
+    },
+    "layout": {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "name": "户型初始方案",
+      "styleId": "warm-wood",
+      "furniture": [
+        {
+          "id": "level-1-living-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-living",
+          "skuId": "level-1-living-sku-0",
+          "positionMm": [
+            3750,
+            5250,
+            0
+          ],
+          "sizeMm": [
+            1700,
+            800,
+            800
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-living-item-1",
+          "floorId": "level-1",
+          "roomId": "level-1-living",
+          "skuId": "level-1-living-sku-1",
+          "positionMm": [
+            3750,
+            4050,
+            0
+          ],
+          "sizeMm": [
+            1100,
+            600,
+            400
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-kitchen-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-kitchen",
+          "skuId": "level-1-kitchen-sku-0",
+          "positionMm": [
+            9500,
+            3350,
+            0
+          ],
+          "sizeMm": [
+            1200,
+            600,
+            850
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-bath-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-bath",
+          "skuId": "level-1-bath-sku-0",
+          "positionMm": [
+            12750,
+            3300,
+            0
+          ],
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-dining-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-dining",
+          "skuId": "level-1-dining-sku-0",
+          "positionMm": [
+            10750,
+            5250,
+            0
+          ],
+          "sizeMm": [
+            1400,
+            800,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-bed-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-bed",
+          "skuId": "level-1-bed-sku-0",
+          "positionMm": [
+            2250,
+            10650,
+            0
+          ],
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-1-study-item-0",
+          "floorId": "level-1",
+          "roomId": "level-1-study",
+          "skuId": "level-1-study-sku-0",
+          "positionMm": [
+            6750,
+            11350,
+            0
+          ],
+          "sizeMm": [
+            1200,
+            600,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-master-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-master",
+          "skuId": "level-2-master-sku-0",
+          "positionMm": [
+            3250,
+            3450,
+            0
+          ],
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-bed-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-bed",
+          "skuId": "level-2-bed-sku-0",
+          "positionMm": [
+            8500,
+            3450,
+            0
+          ],
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-bath-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-bath",
+          "skuId": "level-2-bath-sku-0",
+          "positionMm": [
+            12250,
+            4100,
+            0
+          ],
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-study-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-study",
+          "skuId": "level-2-study-sku-0",
+          "positionMm": [
+            2750,
+            11350,
+            0
+          ],
+          "sizeMm": [
+            1200,
+            600,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        },
+        {
+          "id": "level-2-child-item-0",
+          "floorId": "level-2",
+          "roomId": "level-2-child",
+          "skuId": "level-2-child-sku-0",
+          "positionMm": [
+            7500,
+            10650,
+            0
+          ],
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "rotationDeg": 0,
+          "locked": false
+        }
+      ],
+      "materials": [],
+      "cameraViews": [],
+      "catalogSnapshot": [
+        {
+          "skuId": "level-1-living-sku-0",
+          "name": "小户型双人沙发",
+          "sizeMm": [
+            1700,
+            800,
+            800
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-sofa",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-living-sku-1",
+          "name": "原木长茶几",
+          "sizeMm": [
+            1100,
+            600,
+            400
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-coffee-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-kitchen-sku-0",
+          "name": "双门厨房地柜",
+          "sizeMm": [
+            1200,
+            600,
+            850
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-kitchen-cabinet",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-bath-sku-0",
+          "name": "一体坐便器",
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-toilet",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-dining-sku-0",
+          "name": "四人餐桌",
+          "sizeMm": [
+            1400,
+            800,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-bed-sku-0",
+          "name": "单人床",
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-bed",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-1-study-sku-0",
+          "name": "居家办公桌",
+          "sizeMm": [
+            1200,
+            600,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-master-sku-0",
+          "name": "单人床",
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-bed",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-bed-sku-0",
+          "name": "单人床",
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-bed",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-bath-sku-0",
+          "name": "一体坐便器",
+          "sizeMm": [
+            420,
+            700,
+            780
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-toilet",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-study-sku-0",
+          "name": "居家办公桌",
+          "sizeMm": [
+            1200,
+            600,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-table",
+          "productUrl": null
+        },
+        {
+          "skuId": "level-2-child-sku-0",
+          "name": "单人床",
+          "sizeMm": [
+            1000,
+            2000,
+            750
+          ],
+          "priceMinor": null,
+          "currency": "CNY",
+          "sourceType": "user_input",
+          "quotedAt": "2026-10-23T00:00:00Z",
+          "modelAssetId": "builtin-bed",
+          "productUrl": null
+        }
+      ]
+    }
+  }
+}
