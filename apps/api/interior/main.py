@@ -148,7 +148,7 @@ for r in (
 
 @app.get("/api/health")
 def health():
-    return {"status": "ok", "version": "0.1.0", "environment": settings.app_env}
+    return {"status": "ok", "version": "0.2.0", "environment": settings.app_env}
 
 
 @app.get("/api/capabilities")

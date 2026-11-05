@@ -49,19 +49,22 @@
 
 ### 数据与部署
 
-- 数据库共 26 张业务表，接口契约 75 个操作、35 个 schema。
+- 数据库共 26 张业务表，接口契约 84 个操作、42 个 schema。
 - 本地开发：SQLite + 本地私有文件目录 + 数据库任务调度器。
 - 容器部署：`compose.yaml` 编排 PostgreSQL 17、Redis 7.4、迁移任务、API、Celery Worker、Nginx Web。
 - 文件访问全部走授权代理；照片去除 EXIF，缩略图与原图使用私有缓存。
 
-## 二、已接入的 AI 服务（4 项）
+## 二、已接入的 AI 服务（6 项）
 
 | 能力 | 模型 / 接口 | 调用位置 | 说明 |
 | --- | --- | --- | --- |
 | 效果图生成、局部改图 | `qwen-image-2.0-pro`，备用 `qwen-image-2.0` | `interior/providers.py` | 多模态接口；可选同地域备用模型，额度耗尽时切换 |
 | 户型识别、视觉结构复核 | `qwen3-vl-plus` | `interior/providers.py` | 上传户型图识别房间门窗；生成后可做一次六项检查 |
+| 效果图材料反推 | `qwen3-vl-plus` | `interior/review.py` | 识别可见表面材质、颜色与工艺，输出三档替代建议 |
 | 小筑文本对话 | `qwen3.8-27b` | `interior/assistant.py` | 走百炼 OpenAI 兼容接口 `/compatible-mode/v1/chat/completions` |
+| 避坑审查批判分析 | `qwen3.8-27b` | `interior/review.py` | 结构化输出合同/报价/设计问题，失败降级为本地知识库 |
 | 天气查询 | Open-Meteo（geocoding + forecast） | `interior/weather.py` | 免密钥；城市识别、实况与今明预报，失败自动降级 |
+| 可选本地推理 | YOLOv8 + SDXL ControlNet | `interior/recognition.py`、`interior/controlnet.py` | 默认不启用；需自行安装 torch/ultralytics/diffusers 与户型权重 |
 
 模型调用统一受 `ALLOW_AI_CALLS` 控制，使用服务端 `.env` 中的密钥，不暴露到浏览器；文本与视觉调用不扣应用积分，生图按任务结算积分。
 
@@ -97,6 +100,8 @@
 | 项目 | 数量 |
 | --- | --- |
 | 产品内 AI 模型 | 3（图像编辑、视觉识别、文本对话） |
+| 产品内 AI 调用点 | 5（生图、结构复核、户型识别、批判分析、材料反推） |
+| 可选本地模型 | 2（YOLOv8 户型检测、SDXL ControlNet） |
 | 产品内外部数据接口 | 1（Open-Meteo 天气） |
 | 产品内自主 Agent | 0 |
 | 产品内对话助手 | 1（小筑） |
@@ -110,4 +115,4 @@
 - 以上“已接入”均指代码中真实存在并可调用的能力，不是规划项。真实调用记录见 [AI_LIVE_VALIDATION.md](AI_LIVE_VALIDATION.md)。
 - 天气只播报接口返回的实况与今明预报，不提供气象台预警；城市可识别或使用 `WEATHER_DEFAULT_CITY` 默认值。
 - 产品没有支付、MFA、运营后台与向量检索；知识库仍是代码内关键词条目。
-- 测试与构建：后端 222 项、前端 103 项、75/75 个接口操作通过；`tsc` 严格类型检查与生产构建通过。
+- 测试与构建：后端 240 项、前端 103 项通过；OpenAPI 共 84 个操作、42 个 schema；`tsc` 严格类型检查与生产构建通过。

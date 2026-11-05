@@ -1,1 +1,1 @@
-"""Zhujian application: measured geometry remains authoritative."""
+"""JianSpace application: measured geometry remains authoritative."""

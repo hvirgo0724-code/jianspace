@@ -17,7 +17,7 @@ def main():
     with httpx.Client(
         timeout=90,
         follow_redirects=True,
-        headers={"User-Agent": "ZhujianInterior/0.1 (curated-asset-build)"},
+        headers={"User-Agent": "JianSpace/0.2 (curated-asset-build)"},
     ) as client:
 
         def fetch(url, path, source, license, author, expected_md5=None):

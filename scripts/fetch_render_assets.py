@@ -26,7 +26,7 @@ def main():
     path = DEST / "manifest.json"
     manifest = json.loads(path.read_text(encoding="utf-8"))
     with httpx.Client(timeout=60, follow_redirects=True,
-                      headers={"User-Agent": "ZhujianInterior/0.1 curated-render-assets"}) as client:
+                      headers={"User-Agent": "JianSpace/0.2 curated-render-assets"}) as client:
         for asset, maps in CURATED.items():
             info_response = client.get(f"https://api.polyhaven.com/info/{asset}")
             files_response = client.get(f"https://api.polyhaven.com/files/{asset}")

@@ -2706,6 +2706,298 @@
         }
       }
     },
+    "/api/review/analyze": {
+      "post": {
+        "summary": "Review Analyze",
+        "description": "上传合同 / 报价单 / 设计说明，输出批判性审查报告。",
+        "operationId": "review_analyze_api_review_analyze_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_review_analyze_api_review_analyze_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/review/analyze-text": {
+      "post": {
+        "summary": "Review Analyze Text",
+        "description": "纯文本审查（与上传接口等价，供脚本或前端粘贴调用）。",
+        "operationId": "review_analyze_text_api_review_analyze_text_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewJsonIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/review/budget-tiers": {
+      "get": {
+        "summary": "Review Budget Tiers",
+        "description": "三档装修材料预算单价表。",
+        "operationId": "review_budget_tiers_api_review_budget_tiers_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/review/report-pdf": {
+      "post": {
+        "summary": "Review Report",
+        "description": "把已生成的审查结果渲染成 PDF（不重复调用模型）。",
+        "operationId": "review_report_api_review_report_pdf_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportPdfIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/materials/estimate": {
+      "post": {
+        "summary": "Materials Estimate",
+        "description": "按场景面积与风格输出材料清单与三档预算。",
+        "operationId": "materials_estimate_api_materials_estimate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstimateIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/materials/from-image": {
+      "post": {
+        "summary": "Materials From Effect Image",
+        "description": "上传 AI 效果图，反推墙面 / 地面 / 柜体 / 灯具材料建议。",
+        "operationId": "materials_from_effect_image_api_materials_from_image_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_materials_from_effect_image_api_materials_from_image_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/recognition/backend": {
+      "get": {
+        "summary": "Recognition Backend",
+        "description": "当前户型识别后端配置。",
+        "operationId": "recognition_backend_api_recognition_backend_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/recognition/recognize": {
+      "post": {
+        "summary": "Recognition Recognize",
+        "description": "用指定后端识别户型图，返回墙 / 洞口 / 房间的毫米坐标。",
+        "operationId": "recognition_recognize_api_recognition_recognize_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_recognition_recognize_api_recognition_recognize_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/recognition/render-constrained": {
+      "post": {
+        "summary": "Recognition Render Constrained",
+        "description": "ControlNet 约束生成：保持户型轮廓不变，只改风格。",
+        "operationId": "recognition_render_constrained_api_recognition_render_constrained_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_recognition_render_constrained_api_recognition_render_constrained_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/health": {
       "get": {
         "summary": "Health",
@@ -2918,6 +3210,140 @@
         "type": "object",
         "title": "AssetPatch",
         "description": "Photo organisation fields; only keys present in the request are changed."
+      },
+      "Body_materials_from_effect_image_api_materials_from_image_post": {
+        "properties": {
+          "image": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "Image"
+          },
+          "styleHint": {
+            "type": "string",
+            "title": "Stylehint",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "image"
+        ],
+        "title": "Body_materials_from_effect_image_api_materials_from_image_post"
+      },
+      "Body_recognition_recognize_api_recognition_recognize_post": {
+        "properties": {
+          "image": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "Image"
+          },
+          "totalWidthMm": {
+            "type": "integer",
+            "title": "Totalwidthmm",
+            "default": 8000
+          },
+          "floorHeightMm": {
+            "type": "integer",
+            "title": "Floorheightmm",
+            "default": 2800
+          },
+          "backend": {
+            "type": "string",
+            "title": "Backend",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "image"
+        ],
+        "title": "Body_recognition_recognize_api_recognition_recognize_post"
+      },
+      "Body_recognition_render_constrained_api_recognition_render_constrained_post": {
+        "properties": {
+          "image": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "Image"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt",
+            "default": "现代简约风格客厅"
+          }
+        },
+        "type": "object",
+        "required": [
+          "image"
+        ],
+        "title": "Body_recognition_render_constrained_api_recognition_render_constrained_post"
+      },
+      "Body_review_analyze_api_review_analyze_post": {
+        "properties": {
+          "contract": {
+            "anyOf": [
+              {
+                "type": "string",
+                "contentMediaType": "application/octet-stream"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contract"
+          },
+          "quote": {
+            "anyOf": [
+              {
+                "type": "string",
+                "contentMediaType": "application/octet-stream"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quote"
+          },
+          "drawing": {
+            "anyOf": [
+              {
+                "type": "string",
+                "contentMediaType": "application/octet-stream"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Drawing"
+          },
+          "contractText": {
+            "type": "string",
+            "title": "Contracttext",
+            "default": ""
+          },
+          "quoteText": {
+            "type": "string",
+            "title": "Quotetext",
+            "default": ""
+          },
+          "drawingText": {
+            "type": "string",
+            "title": "Drawingtext",
+            "default": ""
+          },
+          "styleHint": {
+            "type": "string",
+            "title": "Stylehint",
+            "default": ""
+          },
+          "useLlm": {
+            "type": "boolean",
+            "title": "Usellm",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "Body_review_analyze_api_review_analyze_post"
       },
       "Body_upload_api_projects__project_id__assets_post": {
         "properties": {
@@ -3140,6 +3566,28 @@
           "token"
         ],
         "title": "EmailToken"
+      },
+      "EstimateIn": {
+        "properties": {
+          "scene": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Scene"
+          },
+          "styleId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Styleid"
+          }
+        },
+        "type": "object",
+        "title": "EstimateIn"
       },
       "Forgot": {
         "properties": {
@@ -3727,6 +4175,20 @@
         ],
         "title": "Register"
       },
+      "ReportPdfIn": {
+        "properties": {
+          "report": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Report"
+          }
+        },
+        "type": "object",
+        "required": [
+          "report"
+        ],
+        "title": "ReportPdfIn"
+      },
       "Reset": {
         "properties": {
           "token": {
@@ -3745,6 +4207,45 @@
           "newPassword"
         ],
         "title": "Reset"
+      },
+      "ReviewJsonIn": {
+        "properties": {
+          "contract": {
+            "type": "string",
+            "title": "Contract",
+            "default": ""
+          },
+          "quote": {
+            "type": "string",
+            "title": "Quote",
+            "default": ""
+          },
+          "drawing": {
+            "type": "string",
+            "title": "Drawing",
+            "default": ""
+          },
+          "styleHint": {
+            "type": "string",
+            "title": "Stylehint",
+            "default": ""
+          },
+          "useLlm": {
+            "type": "boolean",
+            "title": "Usellm",
+            "default": true
+          },
+          "budgetLines": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Budgetlines"
+          }
+        },
+        "type": "object",
+        "title": "ReviewJsonIn"
       },
       "SceneReferenceCreate": {
         "properties": {
