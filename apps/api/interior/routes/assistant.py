@@ -86,7 +86,7 @@ def chat(body: ChatIn, request: Request, user: CurrentUser, db: DB):
         db.add(conversation)
         db.flush()
     brief = assistant.project_brief(db, user, project_id)
-    result = assistant.answer(body.message, brief, history_for(db, conversation.id))
+    result = assistant.answer(body.message, brief, history_for(db, conversation.id), db)
     seq = next_seq(db, conversation.id)
     db.add(
         AssistantMessage(
@@ -311,3 +311,57 @@ def resolve_handoff(
         )
     )
     return handoff_view(row)
+
+
+class KnowledgeSearchIn(Strict):
+    query: str = Field(min_length=1, max_length=2000)
+    limit: int = Field(default=5, ge=1, le=10)
+
+
+@router.get("/assistant/knowledge/status")
+def knowledge_status(user: CurrentUser, db: DB):
+    """当前 RAG 索引状态；不触发写入。"""
+    from .. import rag
+
+    return rag.status(db)
+
+
+@router.post("/assistant/knowledge/search")
+def knowledge_search(
+    body: KnowledgeSearchIn, request: Request, user: CurrentUser, db: DB
+):
+    """混合检索知识片段，离线可用，便于调试与前端引用。"""
+    rate_limit("assistant-knowledge:" + request.client.host, 60, 300)
+    from .. import rag
+
+    result = rag.search(db, body.query.strip(), body.limit)
+    return {
+        "mode": result.mode,
+        "provider": result.provider,
+        "indexed": result.indexed,
+        "note": result.note,
+        "items": result.items,
+    }
+
+
+@router.post("/assistant/knowledge/reindex")
+def knowledge_reindex(user: CurrentUser, db: DB):
+    """增量重建知识索引；仅运维管理员可调用。"""
+    require_admin(user)
+    from .. import rag
+
+    stats = rag.ensure_index(db, force=True)
+    db.add(
+        Audit(
+            actor_id=user.id,
+            action="assistant.knowledge.reindex",
+            detail_json={
+                "chunks": stats["chunks"],
+                "added": stats["added"],
+                "updated": stats["updated"],
+                "removed": stats["removed"],
+            },
+        )
+    )
+    return stats
+

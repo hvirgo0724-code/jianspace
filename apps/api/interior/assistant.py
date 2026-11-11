@@ -403,7 +403,8 @@ def _system_prompt(brief, entries, home_related=True):
         )
     if home_related:
         library = "\n".join(
-            f"[{entry['id']}] {entry['title']}：" + " ".join(entry["points"])
+            f"[{entry['id']}] {entry['title']}（来源：{entry.get('source', '')}）："
+            + " ".join(entry["points"])
             for entry in entries
         ) or "无匹配条目"
         mode = (
@@ -425,13 +426,36 @@ def _system_prompt(brief, entries, home_related=True):
         "3. 不提供承重墙拆改、燃气、消防等违规或危险建议，必须建议专业复核。\n"
         "4. 不承诺施工结果，不替代设计、监理或当地规范。\n"
         "5. 回答使用简体中文，先给结论，再给要点；末尾最多问一个下一步问题。\n"
-        f"6. {mode}\n"
+        "6. 引用家装知识时，在相关结论后用 [条目id] 标注来源，例如 [waterproof]；"
+        "不要引用未提供的条目。\n"
+        f"7. {mode}\n"
         f"项目上下文：{context}\n"
         f"可用知识：\n{library}\n"
     )
 
 
-def ai_answer(text, brief, history):
+def _rag_entries(text, db):
+    """Retrieve grounded passages; any failure keeps the keyword fallback."""
+    if not settings.rag_enabled:
+        return []
+    from . import rag
+
+    try:
+        hits = rag.retrieve(db, text, settings.rag_top_k)
+    except Exception:  # noqa: BLE001 — retrieval must never break chat
+        return []
+    return [
+        {
+            "id": hit["id"],
+            "title": hit["title"],
+            "source": hit["source"],
+            "points": [hit["text"]],
+        }
+        for hit in hits
+    ]
+
+
+def ai_answer(text, brief, history, db=None):
     if not (
         settings.allow_ai_calls
         and settings.dashscope_api_key
@@ -442,9 +466,9 @@ def ai_answer(text, brief, history):
 
     intent = route_intent(text)
     home_related = is_home_related(text, intent)
-    entries = (
-        [] if intent == "budget" or not home_related else search_knowledge(text)
-    )
+    entries = []
+    if not (intent == "budget" or not home_related):
+        entries = _rag_entries(text, db) or search_knowledge(text)
     messages = [
         {"role": "system", "content": _system_prompt(brief, entries, home_related)}
     ]
@@ -473,12 +497,12 @@ def ai_answer(text, brief, history):
     }
 
 
-def answer(text, brief=None, history=None):
+def answer(text, brief=None, history=None, db=None):
     routed = rule_answer(text, brief)
     # Weather is answered from the live feed, not re-narrated by the model.
     if routed["intent"] == "weather":
         return routed
-    ai = ai_answer(text, brief, history or [])
+    ai = ai_answer(text, brief, history or [], db)
     if ai:
         # Keep the deterministic safety signal only for home questions.
         if is_home_related(text, routed["intent"]):

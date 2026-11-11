@@ -244,6 +244,54 @@
   border-radius: 6px;
   padding: 2px 8px;
 }
+.finding .evidence-view {
+  margin-top: 6px;
+}
+.evidence-toggle {
+  border: 1px solid #e3e9d4;
+  background: #f4f7ec;
+  color: #6b7e4e;
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.evidence-toggle:hover {
+  background: #eef3e2;
+}
+.evidence-panel {
+  margin-top: 8px;
+  border: 1px solid #eef0e6;
+  border-radius: 8px;
+  background: #fbfcf7;
+  padding: 10px 12px;
+}
+.evidence-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: #919789;
+}
+.finding .evidence-source {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #4c5444;
+  white-space: pre-wrap;
+}
+.evidence-hit {
+  background: #fff1a8;
+  color: #394c31;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+.finding .evidence-note {
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: #919789;
+}
 .tier-table {
   width: 100%;
   border-collapse: collapse;

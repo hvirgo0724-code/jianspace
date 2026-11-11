@@ -313,6 +313,25 @@ class AssistantHandoff(Identity, Base):
     transcript_json = Column(J, nullable=False, default=list)
 
 
+class RagChunk(Identity, Base):
+    __tablename__ = "rag_chunks"
+    doc_id = Column(String(160), nullable=False, index=True)
+    chunk_index = Column(Integer, nullable=False, default=0)
+    title = Column(String(160), nullable=False)
+    category = Column(String(40), nullable=False, index=True)
+    source = Column(String(200), nullable=False, default="")
+    text = Column(Text, nullable=False)
+    keywords_json = Column(J, nullable=False, default=list)
+    metadata_json = Column(J, nullable=False, default=dict)
+    content_hash = Column(String(64), nullable=False, index=True)
+    embedding_provider = Column(String(30), nullable=False, default="local")
+    embedding_model = Column(String(80), nullable=False, default="")
+    embedding_dim = Column(Integer, nullable=False, default=0)
+    embedding_json = Column(J, nullable=False, default=list)
+    updated_at = Column(String(40), nullable=False, default=now)
+    __table_args__ = (UniqueConstraint("doc_id", "chunk_index"),)
+
+
 class Audit(Identity, Base):
     __tablename__ = "audit_events"
     actor_id = Column(String(36), ForeignKey("app_users.id"))

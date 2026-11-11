@@ -147,6 +147,9 @@ def review_report(report: ReportPdfIn, user: CurrentUser):
                 description=str(item.get("description") or ""),
                 advice=str(item.get("advice") or ""),
                 evidence=item.get("evidence"),
+                evidence_ref=item.get("evidenceRef")
+                if isinstance(item.get("evidenceRef"), dict)
+                else None,
                 estimated_amount_minor=item.get("estimatedAmountMinor"),
                 source=str(item.get("source") or "rule"),
                 budget_item_ids=list(item.get("budgetItemIds") or []),

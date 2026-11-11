@@ -29,6 +29,22 @@ class Settings(BaseSettings):
     dashscope_image_fallback_models: str = ""
     dashscope_vision_model: str = "qwen3-vl-plus"
     dashscope_text_model: str = ""
+    rag_enabled: bool = True
+    rag_top_k: int = Field(default=4, ge=1, le=8)
+    rag_vector_weight: float = Field(default=0.55, ge=0, le=1)
+    rag_min_score: float = Field(default=0.15, ge=0, le=1)
+    rag_auto_index: bool = True
+    rag_embedding_provider: str = "local"
+    rag_embedding_model: str = "text-embedding-v4"
+    rag_embedding_dim: int = Field(default=384, ge=64, le=1024)
+    review_rag_enabled: bool = True
+    review_rag_timeout_ms: int = Field(default=1500, ge=100, le=10000)
+    review_rag_max_clauses: int = Field(default=80, ge=10, le=200)
+    review_rag_max_clause_chars: int = Field(default=1200, ge=300, le=2000)
+    review_rag_top_k: int = Field(default=8, ge=1, le=16)
+    review_rag_prompt_chars: int = Field(default=12000, ge=2000, le=24000)
+    review_rag_cache_size: int = Field(default=8, ge=1, le=32)
+    review_rag_embedding_provider: str = "local"
     support_email: str = ""
     weather_enabled: bool = True
     weather_default_city: str = ""

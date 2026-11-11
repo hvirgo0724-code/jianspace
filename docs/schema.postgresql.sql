@@ -15,6 +15,27 @@ CREATE TABLE app_users (
 	UNIQUE (email)
 )
 
+CREATE TABLE rag_chunks (
+	doc_id VARCHAR(160) NOT NULL, 
+	chunk_index INTEGER NOT NULL, 
+	title VARCHAR(160) NOT NULL, 
+	category VARCHAR(40) NOT NULL, 
+	source VARCHAR(200) NOT NULL, 
+	text TEXT NOT NULL, 
+	keywords_json JSONB NOT NULL, 
+	metadata_json JSONB NOT NULL, 
+	content_hash VARCHAR(64) NOT NULL, 
+	embedding_provider VARCHAR(30) NOT NULL, 
+	embedding_model VARCHAR(80) NOT NULL, 
+	embedding_dim INTEGER NOT NULL, 
+	embedding_json JSONB NOT NULL, 
+	updated_at VARCHAR(40) NOT NULL, 
+	id VARCHAR(36) NOT NULL, 
+	created_at VARCHAR(40) NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (doc_id, chunk_index)
+)
+
 CREATE TABLE account_profiles (
 	user_id VARCHAR(36) NOT NULL, 
 	plan_id VARCHAR(24) NOT NULL, 

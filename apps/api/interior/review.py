@@ -15,6 +15,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Literal
 
+from . import review_rag
 
 Category = Literal[
     "hygiene_corner",
@@ -37,6 +38,7 @@ class Finding:
     description: str
     advice: str
     evidence: str | None = None
+    evidence_ref: dict | None = None
     estimated_amount_minor: int | None = None
     source: str = "rule"
     budget_item_ids: list[str] = field(default_factory=list)
@@ -56,6 +58,9 @@ class ReviewReport:
     predicted_extra_cost_minor: int = 0
     llm_used: bool = False
     llm_note: str = ""
+    rag_used: bool = False
+    rag_note: str = ""
+    evidence_contexts: dict[str, dict] = field(default_factory=dict)
     documents: dict[str, int] = field(default_factory=dict)
 
 
@@ -232,8 +237,156 @@ KNOWLEDGE_BASE: list[dict] = [
 ]
 
 
+_CN_DIGITS = {
+    "零": 0,
+    "一": 1,
+    "二": 2,
+    "两": 2,
+    "三": 3,
+    "四": 4,
+    "五": 5,
+    "六": 6,
+    "七": 7,
+    "八": 8,
+    "九": 9,
+}
+_DURATION = re.compile(r"(\d+(?:\.\d+)?|[零一二两三四五六七八九十]+)\s*(年|个月|月)")
+_SENTENCE_SPLIT = re.compile(r"[。；;！？\n]")
+_APPROVAL = re.compile(r"书面|签字|签认|签证|审批|甲方确认|业主确认|确认后")
+_ORAL_CHANGE = re.compile(r"口头|无需确认|不需确认|无需书面|事后补签")
+_POINT_PRICE = re.compile(
+    r"按点位[^。；\n]{0,4}(?:结算|计价|计费|收费|报价)"
+    r"|点位[^。；\n]{0,4}(?:单价|计价|结算|收费)"
+    r"|点位[^。；\n]{0,6}\d+\s*元"
+    r"|(?:每个|每|单)点位[^。；\n]{0,8}(?:元|收费|计价)"
+    r"|(?:结算|计价|计费|收费)[^。；\n]{0,3}按点位"
+)
+_PENALTY_TERM = r"(?:违约金|赔付|赔偿|罚款|滞纳金)"
+_PENALTY_NEGATED = re.compile(rf"(?:无|不|免)(?:需)?(?:支付|承担)?{_PENALTY_TERM}")
+
+
+def _cn_number(value: str) -> float | None:
+    if value in _CN_DIGITS:
+        return float(_CN_DIGITS[value])
+    if "十" in value:
+        head, _, tail = value.partition("十")
+        tens = _CN_DIGITS.get(head, 1) if head else 1
+        ones = _CN_DIGITS.get(tail, 0) if tail else 0
+        return float(tens * 10 + ones)
+    return None
+
+
+def _duration_years(value: str, unit: str) -> float | None:
+    number = float(value) if value.replace(".", "", 1).isdigit() else _cn_number(value)
+    if number is None:
+        return None
+    return number / 12 if unit in ("个月", "月") else number
+
+
+def _warranty_short(text: str) -> bool:
+    """质保条款只有在明确短于 2 年（基础）/5 年（水电隐蔽）时才报。"""
+    for fragment in _SENTENCE_SPLIT.split(text):
+        if not re.search(r"质保|保修|售后|维保", fragment):
+            continue
+        if re.search(r"终身|永久", fragment):
+            continue
+        for part in re.split(r"[，,、]", fragment):
+            for match in _DURATION.finditer(part):
+                years = _duration_years(match.group(1), match.group(2))
+                if years is None:
+                    continue
+                prefix = part[: match.start()]
+                standard = 5 if re.search(r"水电|隐蔽|防水", prefix) else 2
+                if years < standard:
+                    return True
+    return False
+
+
+def _change_order_missing(text: str) -> bool:
+    """只在出现增项/变更且没有书面确认时报告；「签证」本身视为书面确认。"""
+    for fragment in _SENTENCE_SPLIT.split(text):
+        if not re.search(r"增项|变更|追加", fragment):
+            continue
+        if _ORAL_CHANGE.search(fragment):
+            return True
+        if not _APPROVAL.search(fragment):
+            return True
+    return False
+
+
+def _water_point_risk(text: str) -> bool:
+    """水电按点位计价才报；仅有点位图或按米数/包干结算不报。"""
+    for fragment in _SENTENCE_SPLIT.split(text):
+        if not re.search(r"水电|隐蔽", fragment):
+            continue
+        if _POINT_PRICE.search(fragment):
+            return True
+    return False
+
+
+def _deposit_high(text: str) -> bool:
+    """开工前/首付比例超过 60% 才报；没有百分比时不硬报。"""
+    for fragment in _SENTENCE_SPLIT.split(text):
+        if not re.search(r"首付|首期|定金|订金|预付|签约|开工前", fragment):
+            continue
+        if any(
+            float(value) > 60 for value in re.findall(r"(\d+(?:\.\d+)?)\s*%", fragment)
+        ):
+            return True
+    return False
+
+
+def _penalty_missing(text: str) -> bool:
+    """工期条款明确无赔付、或没有赔付约定、或低于 0.1%/天才报。"""
+    if not re.search(r"工期|延误|逾期", text):
+        return False
+    if _PENALTY_NEGATED.search(text):
+        return True
+    context = re.search(
+        rf"(?:工期|延误|逾期)[^。；\n]{{0,80}}{_PENALTY_TERM}"
+        rf"|{_PENALTY_TERM}[^。；\n]{{0,80}}(?:工期|延误|逾期)",
+        text,
+    )
+    if not context:
+        return True
+    window = context.group(0)
+    for match in re.finditer(r"(\d+(?:\.\d+)?)\s*%", window):
+        if float(match.group(1)) < 0.1:
+            return True
+    return False
+
+
+def _brand_missing(text: str) -> bool:
+    """已写明具体品牌或指向附件清单时不报，模糊表述仍报。"""
+    if not re.search(r"品牌|型号", text):
+        return False
+    if re.search(r"未指定|未注明|未标注|待定|另定|待确认", text):
+        return True
+    if re.search(r"高级品牌|同等档次|同档次|知名品牌|一线品牌|品牌不限", text):
+        return True
+    if re.search(r"(?:品牌|型号)\s*[:：]\s*[^\s，。；、]+", text):
+        return False
+    return not re.search(
+        r"(?:品牌|型号)[^。；\n]{0,12}(?:见附件|详见附件|见清单|详见清单)", text
+    )
+
+
+_CONDITION_RULES = {
+    "质保期短于行业标准": _warranty_short,
+    "增项审批流程缺失": _change_order_missing,
+    "水电按点位数结算风险": _water_point_risk,
+    "付款比例前置过高": _deposit_high,
+    "工期违约金缺失": _penalty_missing,
+    "材料品牌未标注": _brand_missing,
+}
+
+
 def match_findings(text_content: str, *, source: str = "rule") -> list[Finding]:
-    """基于关键词匹配生成本地知识库发现。"""
+    """基于关键词匹配生成本地知识库发现。
+
+    合同类规则在关键词命中后再校验数值/条件，无法判定时宁可不报，
+    避免「质保 2 年」「首付 30%」这类合规表述被硬报。
+    """
     text = (text_content or "").lower()
     results: list[Finding] = []
     seen: set[str] = set()
@@ -241,6 +394,9 @@ def match_findings(text_content: str, *, source: str = "rule") -> list[Finding]:
         if not any(kw.lower() in text for kw in entry["keywords"]):
             continue
         title = entry["title"]
+        condition = _CONDITION_RULES.get(title)
+        if condition is not None and not condition(text):
+            continue
         if title in seen:
             continue
         seen.add(title)
@@ -302,7 +458,8 @@ _LLM_SYSTEM = """你是资深家装监理与合同审核专家。基于给定的
 "severity":"high|medium|low","title":"不超过20字","description":"具体问题与依据",
 "advice":"可执行的整改建议","evidence":"文档原文片段（不超过60字）",
 "estimatedAmountYuan":数字或null}]}
-要求：最多 8 条，按严重程度排序；只报告文档中确有依据的问题，不得编造品牌、价格或法规条文。"""
+要求：最多 8 条，按严重程度排序；只报告文档中确有依据的问题，不得编造品牌、价格或法规条文。
+文档以 [名称·段 N｜字符 start-end] 标注定位；evidence 必须从该定位的原文中原样摘录，不得改写。"""
 
 
 def _extract_json(text: str) -> dict | None:
@@ -319,19 +476,27 @@ def _extract_json(text: str) -> dict | None:
         return None
 
 
-def llm_critique(documents: dict[str, str], style_hint: str = "") -> tuple[list[Finding], str]:
-    """调用百炼文本模型做批判分析；失败时返回空列表与原因。"""
+def llm_critique(
+    documents: dict[str, str], style_hint: str = "", *, context: str | None = None
+) -> tuple[list[Finding], str]:
+    """调用百炼文本模型做批判分析；失败时返回空列表与原因。
+
+    ``context`` 为 RAG 组装的带定位条款上下文；为空时沿用原 8000 字截断逻辑。
+    """
     from .config import settings
 
     payload_parts = []
-    for key, label in (
-        ("contract", "合同"),
-        ("quote", "报价单"),
-        ("drawing", "设计说明"),
-    ):
-        value = (documents.get(key) or "").strip()
-        if value:
-            payload_parts.append(f"=== {label} ===\n{value[:8000]}")
+    if context:
+        payload_parts.append(context)
+    else:
+        for key, label in (
+            ("contract", "合同"),
+            ("quote", "报价单"),
+            ("drawing", "设计说明"),
+        ):
+            value = (documents.get(key) or "").strip()
+            if value:
+                payload_parts.append(f"=== {label} ===\n{value[:8000]}")
     if not payload_parts:
         return [], "未提供可分析文档。"
     if not settings.ai_ready or not settings.dashscope_text_model.strip():
@@ -562,15 +727,38 @@ def _generate_summary(by_severity: dict, score: int, total: int) -> str:
 def analyze_documents(
     documents: dict[str, str], *, use_llm: bool = True, style_hint: str = ""
 ) -> ReviewReport:
-    """完整审查流程：规则 + 大模型 + 跨文档核查。"""
+    """完整审查流程：规则 + 大模型 + 跨文档核查。
+
+    条款检索只负责补齐证据与上下文定位；规则/LLM 的结论字段保持原样。
+    """
+    # 浏览器表单提交会把换行规范化为 CRLF，而前端留存的粘贴文本是 LF。
+    # 统一按 LF 建索引，保证 evidenceRef 的字符偏移与前端本地切片一致。
+    documents = {
+        key: value.replace("\r\n", "\n").replace("\r", "\n")
+        for key, value in documents.items()
+        if value
+    }
     merged_text = "\n".join(v for v in documents.values() if v)
     rule_findings = match_findings(merged_text)
     cross_findings = cross_document_check(documents)
 
+    context = review_rag.prepare(documents)
+    if context.used:
+        review_rag.attach_evidence([*rule_findings, *cross_findings], context)
+
     llm_findings: list[Finding] = []
     llm_note = ""
     if use_llm:
-        llm_findings, llm_note = llm_critique(documents, style_hint)
+        llm_context = (
+            review_rag.prompt_context([*rule_findings, *cross_findings], context)
+            if context.used
+            else None
+        )
+        llm_findings, llm_note = llm_critique(
+            documents, style_hint, context=llm_context
+        )
+        if context.used:
+            review_rag.attach_locations(llm_findings, context)
 
     findings = _dedupe([*rule_findings, *cross_findings, *llm_findings])
     severity_rank = {"high": 0, "medium": 1, "low": 2}
@@ -581,6 +769,12 @@ def analyze_documents(
     report = summarize_findings(findings)
     report.llm_used = bool(llm_findings)
     report.llm_note = llm_note
+    report.rag_used = context.used
+    report.rag_note = context.note
+    if context.used:
+        report.evidence_contexts = review_rag.context_windows(
+            documents, context, findings
+        )
     report.documents = {
         key: len(value) for key, value in documents.items() if value
     }
@@ -620,6 +814,9 @@ def report_to_dict(report: ReviewReport) -> dict:
         "predictedExtraCostMinor": report.predicted_extra_cost_minor,
         "llmUsed": report.llm_used,
         "llmNote": report.llm_note,
+        "ragUsed": report.rag_used,
+        "ragNote": report.rag_note,
+        "evidenceContexts": report.evidence_contexts,
         "documents": report.documents,
         "findings": [
             {
@@ -630,6 +827,7 @@ def report_to_dict(report: ReviewReport) -> dict:
                 "description": f.description,
                 "advice": f.advice,
                 "evidence": f.evidence,
+                "evidenceRef": f.evidence_ref,
                 "estimatedAmountMinor": f.estimated_amount_minor,
                 "source": f.source,
                 "budgetItemIds": f.budget_item_ids,
@@ -651,6 +849,88 @@ _CATEGORY_LABEL = {
     "item_prediction": "增项预测",
 }
 _SEVERITY_LABEL = {"high": "高危", "medium": "中危", "low": "低危"}
+_HIGHLIGHT_COLOR = "#FFF1A8"
+
+
+def _xml_escape(text: str) -> str:
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def _evidence_location(ref: dict | None) -> str:
+    """把 evidenceRef 转成「合同·段 35｜字符 123-456」；不合法时返回空串。"""
+    if not isinstance(ref, dict):
+        return ""
+    start, end = ref.get("start"), ref.get("end")
+    if not isinstance(start, int) or not isinstance(end, int):
+        return ""
+    if start < 0 or end <= start:
+        return ""
+    label = str(
+        ref.get("documentLabel") or review_rag.DOC_LABELS.get(ref.get("document"), "")
+    )
+    paragraph = ref.get("paragraph")
+    if isinstance(paragraph, int) and paragraph > 0:
+        head = f"{label}·段 {paragraph}" if label else f"段 {paragraph}"
+    else:
+        head = label
+    return f"{head}｜字符 {start}-{end}" if head else f"字符 {start}-{end}"
+
+
+def _highlight_spans(text: str, terms: list[str]) -> list[tuple[int, int]]:
+    spans: list[tuple[int, int]] = []
+    lowered = text.lower()
+    for term in terms:
+        needle = term.strip().lower()
+        if len(needle) < 2:
+            continue
+        cursor = 0
+        while True:
+            position = lowered.find(needle, cursor)
+            if position < 0:
+                break
+            spans.append((position, position + len(needle)))
+            cursor = position + len(needle)
+    spans.sort()
+    merged: list[tuple[int, int]] = []
+    for start, end in spans:
+        if merged and start <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], end))
+        else:
+            merged.append((start, end))
+    return merged
+
+
+def _evidence_terms(finding: Finding) -> list[str]:
+    evidence = finding.evidence or ""
+    terms = [
+        term for term in review_rag.terms_for(finding) if term and term != finding.title
+    ]
+    for pattern in review_rag.KEY_PATTERNS.values():
+        for match in pattern.finditer(evidence):
+            value = match.group(0)
+            if len(value) >= 2:
+                terms.append(value)
+    return terms
+
+
+def _evidence_markup(evidence: str, terms: list[str]) -> str:
+    """转义原文并把命中片段包成 ReportLab 底色高亮，避免破坏段落标记。"""
+    spans = _highlight_spans(evidence, terms)
+    if not spans:
+        return _xml_escape(evidence)
+    parts: list[str] = []
+    cursor = 0
+    for start, end in spans:
+        if start > cursor:
+            parts.append(_xml_escape(evidence[cursor:start]))
+        parts.append(
+            f'<font backColor="{_HIGHLIGHT_COLOR}">'
+            f"{_xml_escape(evidence[start:end])}</font>"
+        )
+        cursor = end
+    if cursor < len(evidence):
+        parts.append(_xml_escape(evidence[cursor:]))
+    return "".join(parts)
 
 
 def review_report_pdf(report: ReviewReport) -> bytes:
@@ -708,6 +988,7 @@ def review_report_pdf(report: ReviewReport) -> bytes:
     )
     story.extend([stats, Spacer(1, 10), Paragraph("问题清单", h2)])
 
+    first_by_clause: dict[str, int] = {}
     for i, finding in enumerate(report.findings, 1):
         header = (
             f"{i}. [{_SEVERITY_LABEL[finding.severity]}] {finding.title}"
@@ -717,7 +998,25 @@ def review_report_pdf(report: ReviewReport) -> bytes:
         story.append(Paragraph(f"问题：{finding.description}", base))
         story.append(Paragraph(f"建议：{finding.advice}", base))
         if finding.evidence:
-            story.append(Paragraph(f"依据：{finding.evidence}", base))
+            ref = (
+                finding.evidence_ref if isinstance(finding.evidence_ref, dict) else None
+            )
+            location = _evidence_location(ref)
+            clause_key = str(ref.get("clauseId") or "") if ref else ""
+            if clause_key and clause_key in first_by_clause:
+                suffix = f"（{location}）" if location else "（同一条款）"
+                story.append(
+                    Paragraph(
+                        f"依据：同第 {first_by_clause[clause_key]} 条{suffix}", base
+                    )
+                )
+            else:
+                if clause_key:
+                    first_by_clause[clause_key] = i
+                body = _evidence_markup(finding.evidence, _evidence_terms(finding))
+                if location:
+                    body = f"{body}<br/>定位：{_xml_escape(location)}"
+                story.append(Paragraph(f"依据：{body}", base))
         if finding.estimated_amount_minor:
             story.append(Paragraph(f"预估影响金额：{finding.estimated_amount_minor / 100:,.0f} 元", base))
 

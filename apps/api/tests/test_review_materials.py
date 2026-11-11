@@ -23,6 +23,57 @@ def test_rule_findings_cover_major_categories():
     assert "水电按点位数结算风险" in titles
 
 
+def _titles(text: str) -> set[str]:
+    return {finding.title for finding in review.match_findings(text)}
+
+
+def test_warranty_rule_skips_compliant_or_unknown_terms():
+    assert "质保期短于行业标准" not in _titles(
+        "质保：整体质保 2 年，水电隐蔽工程质保 5 年。"
+    )
+    assert "质保期短于行业标准" not in _titles("质保按国家规定执行。")
+    assert "质保期短于行业标准" in _titles(
+        "质保：整体质保 1 年，水电隐蔽工程质保 3 年。"
+    )
+    assert "质保期短于行业标准" in _titles("质保期为 18 个月。")
+
+
+def test_change_order_rule_requires_written_approval():
+    assert "增项审批流程缺失" not in _titles(
+        "增项须业主书面签字确认后方可施工，变更以现场签证为准。"
+    )
+    assert "增项审批流程缺失" in _titles("增项按实际发生量结算，口头通知即可施工。")
+    assert "增项审批流程缺失" in _titles("合同未约定增项如何确认。")
+
+
+def test_water_point_rule_requires_point_pricing():
+    assert "水电按点位数结算风险" not in _titles(
+        "水电隐蔽工程质保 5 年，点位图见附件。"
+    )
+    assert "水电按点位数结算风险" not in _titles("水电改造按实测米数结算，点位另计。")
+    assert "水电按点位数结算风险" in _titles("水电改造按点位结算，每个点位 180 元。")
+
+
+def test_conditional_rules_skip_compliant_numbers():
+    titles = _titles(
+        "付款：签约首付 30%，水电验收后支付 30%，尾款 40%。"
+        "工期 60 天，逾期按 0.2%/天支付违约金。"
+        "材料品牌：立邦乳胶漆、圣象地板。"
+    )
+    assert "付款比例前置过高" not in titles
+    assert "工期违约金缺失" not in titles
+    assert "材料品牌未标注" not in titles
+
+
+def test_conditional_rules_keep_true_positives():
+    titles = _titles(
+        "签约首付 80%，开工前再付 10%。工期 60 天，延误无赔付。乳胶漆未指定品牌型号。"
+    )
+    assert "付款比例前置过高" in titles
+    assert "工期违约金缺失" in titles
+    assert "材料品牌未标注" in titles
+
+
 def test_analyze_documents_offline_fallback():
     report = review.analyze_documents(
         {"contract": _contract(), "quote": "报价单总价 180000 元"},

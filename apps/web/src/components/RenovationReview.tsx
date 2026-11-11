@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, FileDown, ShieldAlert } from 'lucide-react';
 import { api, csrfToken } from '../api';
+import {
+  primaryIdByClause,
+  resolveEvidence,
+  type EvidenceContext,
+  type EvidenceRef,
+} from '../evidence';
 import './insight.css';
 
 type Finding = {
@@ -12,6 +18,7 @@ type Finding = {
   description: string;
   advice: string;
   evidence: string | null;
+  evidenceRef?: EvidenceRef | null;
   estimatedAmountMinor: number | null;
   source: string;
   budgetItemIds: string[];
@@ -26,6 +33,7 @@ type Report = {
   llmUsed: boolean;
   llmNote: string;
   documents: Record<string, number>;
+  evidenceContexts?: Record<string, EvidenceContext>;
   findings: Finding[];
   notes?: string[];
 };
@@ -56,10 +64,15 @@ export default function RenovationReview() {
   const [error, setError] = useState('');
   const [report, setReport] = useState<Report | null>(null);
   const [pdfBusy, setPdfBusy] = useState(false);
+  const [analyzedTexts, setAnalyzedTexts] = useState<Record<string, string>>({});
+  const [analyzedUploaded, setAnalyzedUploaded] = useState<Record<string, boolean>>({});
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   async function analyze() {
     setBusy(true);
     setError('');
+    const snapshot = { contract: contract.trim(), quote: quote.trim(), drawing: drawing.trim() };
+    const uploaded = { contract: !!contractFile, quote: !!quoteFile, drawing: !!drawingFile };
     try {
       const form = new FormData();
       if (contractFile) form.append('contract', contractFile);
@@ -70,6 +83,9 @@ export default function RenovationReview() {
       form.append('drawingText', drawing);
       form.append('useLlm', String(useLlm));
       const result = await api<Report>('/review/analyze', { method: 'POST', body: form });
+      setAnalyzedTexts(snapshot);
+      setAnalyzedUploaded(uploaded);
+      setExpandedId(null);
       setReport(result);
     } catch (e) {
       setError(e instanceof Error ? e.message : '审查失败，请稍后重试。');
@@ -109,6 +125,13 @@ export default function RenovationReview() {
 
   const score = report?.contractReliabilityScore ?? 0;
   const scoreClass = score >= 70 ? 'good' : score >= 45 ? 'warn' : 'bad';
+  const evidencePrimary = report ? primaryIdByClause(report.findings) : {};
+  const findingOrder = new Map((report?.findings ?? []).map((item, index) => [item.id, index + 1]));
+
+  function focusFinding(id: string) {
+    setExpandedId(id);
+    document.getElementById(`finding-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 
   return (
     <div className="insight-page">
@@ -220,30 +243,87 @@ export default function RenovationReview() {
           <div className="insight-card">
             <h2>问题清单</h2>
             <p className="hint">按严重程度排序，可直接据此与装修公司逐条沟通。</p>
-            {report.findings.map((finding) => (
-              <div className={`finding ${finding.severity}`} key={finding.id}>
-                <div className="finding-head">
-                  <strong>{finding.title}</strong>
-                  <span className={`chip ${finding.severity}`}>{SEVERITY[finding.severity]}</span>
-                  <span className="chip">{CATEGORY[finding.category] ?? finding.category}</span>
-                  {finding.source === 'llm' && <span className="chip">大模型</span>}
-                  {finding.estimatedAmountMinor ? (
-                    <span className="chip">影响 {yuan(finding.estimatedAmountMinor)}</span>
-                  ) : null}
+            {report.findings.map((finding) => {
+              const view = resolveEvidence(
+                finding,
+                report.evidenceContexts,
+                analyzedTexts,
+                analyzedUploaded,
+              );
+              const clauseId = finding.evidenceRef?.clauseId;
+              const ownerId = clauseId ? evidencePrimary[clauseId] : undefined;
+              const expanded = expandedId === finding.id;
+              const shared = Boolean(ownerId && ownerId !== finding.id);
+              return (
+                <div
+                  className={`finding ${finding.severity}`}
+                  key={finding.id}
+                  id={`finding-${finding.id}`}
+                >
+                  <div className="finding-head">
+                    <strong>{finding.title}</strong>
+                    <span className={`chip ${finding.severity}`}>{SEVERITY[finding.severity]}</span>
+                    <span className="chip">{CATEGORY[finding.category] ?? finding.category}</span>
+                    {finding.source === 'llm' && <span className="chip">大模型</span>}
+                    {finding.estimatedAmountMinor ? (
+                      <span className="chip">影响 {yuan(finding.estimatedAmountMinor)}</span>
+                    ) : null}
+                  </div>
+                  <p>{finding.description}</p>
+                  <p>
+                    <b>建议：</b>
+                    {finding.advice}
+                  </p>
+                  {finding.evidence && <p className="evidence">依据：{finding.evidence}</p>}
+                  {view.kind !== 'excerpt' && (
+                    <div className="evidence-view">
+                      {shared && ownerId ? (
+                        <button
+                          type="button"
+                          className="evidence-toggle"
+                          onClick={() => focusFinding(ownerId)}
+                        >
+                          与第 {findingOrder.get(ownerId)} 条同一段 · 查看原文
+                        </button>
+                      ) : (
+                        <>
+                          <button
+                            type="button"
+                            className="evidence-toggle"
+                            onClick={() => setExpandedId(expanded ? null : finding.id)}
+                          >
+                            {expanded ? '收起原文对照' : '查看原文对照'}
+                          </button>
+                          {expanded && view.kind === 'context' && (
+                            <div className="evidence-panel">
+                              <div className="evidence-meta">
+                                <span>{view.label}</span>
+                                <span>
+                                  字符 {finding.evidenceRef?.start}-{finding.evidenceRef?.end}
+                                </span>
+                              </div>
+                              <p className="evidence-source">
+                                {view.before}
+                                <mark className="evidence-hit">{view.hit}</mark>
+                                {view.after}
+                              </p>
+                            </div>
+                          )}
+                          {expanded && view.kind === 'unavailable' && (
+                            <p className="evidence-note">{view.note}</p>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  )}
+                  {finding.budgetItemIds.length > 0 && (
+                    <span className="budget-link">
+                      关联预算条目 {finding.budgetItemIds.length} 项
+                    </span>
+                  )}
                 </div>
-                <p>{finding.description}</p>
-                <p>
-                  <b>建议：</b>
-                  {finding.advice}
-                </p>
-                {finding.evidence && <p className="evidence">依据：{finding.evidence}</p>}
-                {finding.budgetItemIds.length > 0 && (
-                  <span className="budget-link">
-                    关联预算条目 {finding.budgetItemIds.length} 项
-                  </span>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </>
       )}

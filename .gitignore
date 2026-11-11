@@ -18,3 +18,7 @@ artifacts/
 *.db-wal
 backups/
 .DS_Store
+
+# 个人文档，不纳入版本库
+筑见项目经历.docx
+筑见项目经历.md
